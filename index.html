@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>MoodTracker</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -12,6 +12,166 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <section id="title-page" class="title-page hidden">
+        <h1>MoodTracker</h1>
+        <p>Paragraph paragraph paragraph paragraph paragraph paragraph paragraph
+         paragraph paragraph paragraph paragraph paragraph Paragraph paragraph
+         paragraph paragraph paragraph paragraph</p>
+        <button id="sign-up-open">Sign Up</button>
+        <button id="sign-in-open">Sign In</button>
+      </section>
+
+      <div id="signup-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="sign-up">
+            <fieldset>
+              <legend>Sign Up:</legend>
+              <p id="signup-message"></p>
+              <label>Name: </label>
+              <input type="text" name="--match API doc--" placeholder="First, Last">
+              <label>Email: </label>
+              <input type="email" name="--match API doc--" placeholder="name@webaddress.com">
+              <label>Password: </label>
+              <input type="password" name="--match API doc--" placeholder="*****">
+              <label>Password Confrimation: </label>
+              <input type="password" name="--match API doc--" placeholder="*****">
+              <input class="submit" type="submit" name="submit" value="Submit">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <div id="sign-in-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="sign-in">
+            <fieldset>
+              <legend>Sign In:</legend>
+              <p id="signin-message"></p>
+              <label>Email: </label>
+              <input type="email" name="--match API doc--" placeholder="name@webaddress.com">
+              <label>Password: </label>
+              <input type="password" name="--match API doc--" placeholder="*****">
+              <input class="submit" type="submit" name="submit" value="Submit">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
+      <main id="main" class="main">
+        <nav id="slide-menu">
+        	<ul>
+        		<li class="log-nav">Event Log</li>
+        		<li class="update-nav">Update Profile</li>
+        		<li class="sign-out">Signout</li>
+        	</ul>
+        </nav>
+        <form id="tracker-submission" class="form">
+          <fieldset id="needs-fieldset" class="container">
+          <div class="row">
+            <div class="need col-6 col-lg-3">
+              <label for="hunger">hunger</label>
+              <input id="hunger" type="range" value="">
+            </div>
+            <div class="need col-6 col-lg-3">
+              <label for="comfort">comfort</label>
+              <input id="comfort" type="range" value="">
+            </div>
+            <div class="need col-6 col-lg-3">
+              <label for="bladder">bladder</label>
+              <input id="bladder" type="range" value="">
+            </div>
+            <div class="need col-6 col-lg-3">
+              <label for="energy">energy</label>
+              <input id="energy" type="range" value="">
+            </div>
+            <div class="need col-6 col-lg-3">
+              <label for="fun">fun</label>
+              <input id="fun" type="range" value="">
+            </div>
+            <div class="need col-6 col-lg-3">
+              <label for="social">social</label>
+              <input id="social" type="range" value="">
+            </div>
+            <div class="need col-6 col-lg-3">
+              <label for="hygiene">hygiene</label>
+              <input id="hygiene" type="range" value="">
+            </div>
+            <div class="need col-6 col-lg-3">
+              <label for="environment">environment</label>
+              <input id="environment" type="range" value="">
+            </div>
+          </div>
+          </fieldset>
+          <fieldset id="mood-fieldset" class="container">
+          <div class="row">
+            <div class="mood col-4 col-lg-2">
+              <label for="happy">Happy</label>
+              <input type="radio" id="happy" name="needs" value="happy">
+            </div>
+            <div class="mood col-4 col-lg-2">
+              <label for="calm">Calm</label>
+              <input type="radio" id="calm" name="needs" value="calm">
+            </div>
+            <div class="mood col-4 col-lg-2">
+              <label for="sad">Sad</label>
+              <input type="radio" id="sad" name="needs" value="sad">
+            </div>
+            <div class="mood col-4 col-lg-2">
+              <label for="nervous">Nervous</label>
+              <input type="radio" id="nervous" name="needs" value="nervous">
+            </div>
+            <div class="mood col-4 col-lg-2">
+              <label for="energetic">Energetic</label>
+              <input type="radio" id="energetic" name="needs" value="energetic">
+            </div>
+            <div class="mood col-4 col-lg-2">
+              <label for="angry">Angry</label>
+              <input type="radio" id="angry" name="needs" value="angry">
+            </div>
+          </div>
+          </fieldset>
+          <input class="submit" type="submit" name="submit" value="Submit">
+        </form>
+      </main>
+
+      <div id="entrylog-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <article id="entry-log">
+            <h3>Entry Log: </h3>
+          </article>
+        </div>
+      </div>
+
+      <!-- Analysis modal is a stretch goal after the entry log!
+      <div id="analysis-modal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Analysis</p>
+        </div>
+      </div> -->
+
+      <div id="update-profile-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <form id="update-profile">
+            <fieldset>
+              <legend>Update Profile:</legend>
+              <p id="updateprofile-message"></p>
+              <label>Name: </label>
+              <input type="text" name="--match API doc--" placeholder="First, Last">
+              <label>Email: </label>
+              <input type="email" name="--match API doc--" placeholder="name@webaddress.com">
+              <label>Password: </label>
+              <input type="password" name="--match API doc--" placeholder="*****">
+              <label>Password Confrimation: </label>
+              <input type="password" name="--match API doc--" placeholder="*****">
+            </fieldset>
+          </form>
+        </div>
+      </div>
+
     </body>
 </html>

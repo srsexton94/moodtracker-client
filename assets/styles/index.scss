@@ -1,1 +1,65 @@
 @import '~bootstrap/scss/bootstrap';
+
+$background: rgba(0, 0, 0, 0.4);
+$focus: #000;
+$accent: #aeaeae;
+$form: #fefefe;
+$shade: rgba(0, 0, 0, 0.1);
+
+ul {
+  list-style: none;
+}
+.close {
+  color: $accent;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+
+  :hover,
+  :focus {
+    color: $focus;
+    cursor: pointer;
+    text-decoration: none;
+  }
+}
+
+.form {
+  text-align: center;
+}
+
+.modal {
+  background-color: $background;
+  display: block;
+  height: 100%;
+  left: 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.modal-content {
+  background-color: $form;
+  border: 1px solid $accent;
+  box-shadow: 0 4px 8px 0 $shade;
+  margin: 15% auto;
+  padding: 20px;
+  width: 80%;
+}
+
+.need,
+.mood {
+  display: flex;
+  justify-content: center;
+}
+
+.submit {
+  display: inline-block;
+}
+.title-page {
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}

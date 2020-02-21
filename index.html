@@ -12,13 +12,13 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <section id="title-page" class="title-page hidden">
+      <section id="title-page" class="title-page">
         <h1>MoodTracker</h1>
         <p>Paragraph paragraph paragraph paragraph paragraph paragraph paragraph
          paragraph paragraph paragraph paragraph paragraph Paragraph paragraph
          paragraph paragraph paragraph paragraph</p>
-        <button id="sign-up-open">Sign Up</button>
-        <button id="sign-in-open">Sign In</button>
+        <button id="signup-open">Sign Up</button>
+        <button id="signin-open">Sign In</button>
       </section>
 
       <div id="signup-modal" class="modal hidden">
@@ -59,12 +59,12 @@
         </div>
       </div>
 
-      <main id="main" class="main">
+      <main id="main" class="main hidden">
         <nav id="slide-menu">
         	<ul>
-        		<li class="log-nav">Event Log</li>
-        		<li class="update-nav">Update Profile</li>
-        		<li class="sign-out">Signout</li>
+        		<li id="entrylog-open">Event Log</li>
+        		<li id="update-open">Update Profile</li>
+        		<li id="sign-out">Signout</li>
         	</ul>
         </nav>
         <form id="tracker-submission" class="form">
@@ -139,19 +139,10 @@
       <div id="entrylog-modal" class="modal hidden">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <article id="entry-log">
-            <h3>Entry Log: </h3>
+          <article id="entry-log">Entries
           </article>
         </div>
       </div>
-
-      <!-- Analysis modal is a stretch goal after the entry log!
-      <div id="analysis-modal" class="modal">
-        <div class="modal-content">
-          <span class="close">&times;</span>
-          <p>Analysis</p>
-        </div>
-      </div> -->
 
       <div id="update-profile-modal" class="modal hidden">
         <div class="modal-content">

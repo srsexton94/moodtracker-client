@@ -45,9 +45,13 @@ const onSignOut = event => {
     .catch(ui.onSignOutFailure)
 }
 
+const addHandlers = () => {
+  $('#sign-up').on('submit', onSignUp)
+  $('#sign-in').on('submit', onSignIn)
+  $('#update-profile').on('submit', onUpdateProfile)
+  $('#sign-out').on('submit', onSignOut)
+}
+
 module.exports = {
-  onSignUp,
-  onSignIn,
-  onUpdateProfile,
-  onSignOut
+  addHandlers
 }

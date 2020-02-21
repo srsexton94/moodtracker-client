@@ -4,9 +4,8 @@ const store = require('./../store.js')
 
 const onSignUpSuccess = response => {
   $('#sign-up').trigger('reset') // clears the form
-
-  // Add code to navigate to signIn modal (or sign in automatically?)
-  // upon successful sign up
+  $('#signup-modal').addClass('hidden')
+  $('#signin-modal').removeClass('hidden')
 }
 
 const onSignUpFailure = response => {
@@ -23,11 +22,14 @@ const onSignUpFailure = response => {
 const onSignInSuccess = response => {
   $('#sign-in').trigger('reset') // clears the form
 
-  // Add code to navigate to main page upon successful sign in
-
   // stores the response data in 'store.js' to access authentication token later
   store.user = response.user
   store.user.games = []
+
+  // Navigates to main page upon successful sign in
+  $('#signin-modal').addClass('hidden')
+  $('#title-page').addClass('hidden')
+  $('#main').removeClass('hidden')
 }
 
 const onSignInFailure = response => {
@@ -44,11 +46,12 @@ const onSignInFailure = response => {
 const onChangePasswordSuccess = response => {
   $('#change-password').trigger('reset') // clears the form
 
-  // Add code to navigate back to the main page upon successful form submission
+  // Navigates back to the main page upon successful form submission
+  $('#changepassword-modal').addClass('hidden')
 }
 
 const onChangePasswordFailure = response => {
-  // add success message in change password form
+  // add failure message in change password form
   $('#changepassword-message').text('Password update failed, Please try again.')
 
   $('#change-password').trigger('reset') // clears the form
@@ -61,9 +64,11 @@ const onChangePasswordFailure = response => {
 const onSignOutSuccess = response => {
   $('#sign-out').trigger('reset') // clears the form
 
-  // Add code to navigate back to main page upon succesful sign out
-
   store.user = null // wipes signed-in users data clean
+
+  // Navigates back to title page upon succesful sign out
+  $('#main').addClass('hidden')
+  $('#title-page').removeClass('hidden')
 }
 
 const onSignOutFailure = response => {

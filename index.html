@@ -56,7 +56,7 @@
         </div>
       </div>
 
-      <main id="main" class="main">
+      <main id="main" class="main hidden">
         <nav id="slide-menu">
         	<ul>
         		<li id="entrylog-open">Event Log</li>
@@ -102,30 +102,37 @@
           </div>
           </fieldset> -->
           <fieldset id="mood-fieldset" class="container">
+          <h2>How are you feeling right now?</h2>
           <div class="row">
             <div class="mood col-4 col-lg-2">
-              <label for="happy">Happy</label>
-              <input type="radio" id="happy" name="needs" value="happy">
+              <label class="emoji" for="happy">
+                😊<input class="radio hidden" id="happy" type="radio" name="needs" value="happy">
+              </label>
             </div>
             <div class="mood col-4 col-lg-2">
-              <label for="calm">Calm</label>
-              <input type="radio" id="calm" name="needs" value="calm">
+              <label class="emoji" for="calm">
+                😌<input class="radio hidden" id="calm" type="radio" name="needs" value="calm">
+              </label>
             </div>
             <div class="mood col-4 col-lg-2">
-              <label for="sad">Sad</label>
-              <input type="radio" id="sad" name="needs" value="sad">
+              <label class="emoji" for="sad">
+                😢<input class="radio hidden" id="sad" type="radio" name="needs" value="sad">
+              </label>
             </div>
             <div class="mood col-4 col-lg-2">
-              <label for="nervous">Nervous</label>
-              <input type="radio" id="nervous" name="needs" value="nervous">
+              <label class="emoji" for="nervous">
+                😰<input class="radio hidden" id="nervous" type="radio" name="needs" value="nervous">
+              </label>
             </div>
             <div class="mood col-4 col-lg-2">
-              <label for="motivated">Motivated</label>
-              <input type="radio" id="motivated" name="needs" value="motivated">
+              <label class="emoji" for="motivated">
+                💪<input class="radio hidden" id="motivated" type="radio" name="needs" value="motivated">
+              </label>
             </div>
             <div class="mood col-4 col-lg-2">
-              <label for="angry">Angry</label>
-              <input type="radio" id="angry" name="needs" value="angry">
+              <label class="emoji" for="angry">
+                😡<input class="radio hidden" id="angry" type="radio" name="needs" value="angry">
+              </label>
             </div>
           </div>
           </fieldset>

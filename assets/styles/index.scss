@@ -6,9 +6,18 @@ $accent: #aeaeae;
 $form: #fefefe;
 $shade: rgba(0, 0, 0, 0.1);
 
-ul {
-  list-style: none;
+li {
+  display: inline;
+  padding: 1em;
 }
+
+ul {
+  display: flex;
+  justify-content: center;
+  list-style-type: none;
+  float: right;
+}
+
 .close {
   color: $accent;
   float: right;
@@ -21,6 +30,10 @@ ul {
     cursor: pointer;
     text-decoration: none;
   }
+}
+
+.emoji {
+  font-size: 5em;
 }
 
 .form {

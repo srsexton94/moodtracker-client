@@ -24,13 +24,24 @@ const closeModal = event => {
   $('.modal').addClass('hidden')
 }
 
+const upToIn = event => {
+  closeModal(event)
+  openSignIn(event)
+}
+
+const inToUp = event => {
+  closeModal(event)
+  openSignUp(event)
+}
+
 const addHandlers = () => {
   $('#signup-open').on('click', openSignUp)
   $('#signin-open').on('click', openSignIn)
   $('#entrylog-open').on('click', openEntryLog)
   $('#update-open').on('click', openUpdate)
   $('.close').on('click', closeModal)
-  $('.modal').on('click', closeModal) // on click outside modal content
+  $('#signup-to-signin').on('click', upToIn)
+  $('#signin-to-signup').on('click', inToUp)
 }
 
 module.exports = {

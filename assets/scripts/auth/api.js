@@ -22,7 +22,7 @@ const signIn = data => {
 }
 
 // requiring authentication token, edit portion of API data (password)
-const updateProfile = data => {
+const changePassword = data => {
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -47,6 +47,6 @@ const signOut = () => {
 module.exports = {
   signUp,
   signIn,
-  updateProfile,
+  changePassword,
   signOut
 }

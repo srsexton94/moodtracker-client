@@ -26,15 +26,15 @@ const onSignIn = event => { // the following all mirror previous comments
     .catch(ui.onSignInFailure)
 }
 
-const onUpdateProfile = event => {
+const onChangePassword = event => {
   event.preventDefault()
 
   const form = event.target
   const data = getFormFields(form)
 
-  api.updateProfile(data)
-    .then(ui.onUpdateProfileSuccess)
-    .catch(ui.onUpdateProfileFailure)
+  api.onChangePassword(data)
+    .then(ui.onChangePasswordSuccess)
+    .catch(ui.onChangePasswordFailure)
 }
 
 const onSignOut = event => {
@@ -48,7 +48,7 @@ const onSignOut = event => {
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
-  $('#update-profile').on('submit', onUpdateProfile)
+  $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
 }
 

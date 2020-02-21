@@ -16,8 +16,8 @@ const openEntryLog = event => {
   $('#entrylog-modal').removeClass('hidden')
 }
 
-const openUpdate = event => {
-  $('#updateprofile-modal').removeClass('hidden')
+const openChangePassword = event => {
+  $('#changepassword-modal').removeClass('hidden')
 }
 
 const closeModal = event => {
@@ -38,7 +38,7 @@ const addHandlers = () => {
   $('#signup-open').on('click', openSignUp)
   $('#signin-open').on('click', openSignIn)
   $('#entrylog-open').on('click', openEntryLog)
-  $('#update-open').on('click', openUpdate)
+  $('#changepassword-open').on('click', openChangePassword)
   $('.close').on('click', closeModal)
   $('#signup-to-signin').on('click', upToIn)
   $('#signin-to-signup').on('click', inToUp)

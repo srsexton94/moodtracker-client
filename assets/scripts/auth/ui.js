@@ -41,20 +41,20 @@ const onSignInFailure = response => {
   }, 5000)
 }
 
-const onUpdateProfileSuccess = response => {
-  $('#update-profile').trigger('reset') // clears the form
+const onChangePasswordSuccess = response => {
+  $('#change-password').trigger('reset') // clears the form
 
   // Add code to navigate back to the main page upon successful form submission
 }
 
-const onUpdateProfileFailure = response => {
-  // add success message in update profile form
-  $('#updateprofile-message').text('Password update failed, Please try again.')
+const onChangePasswordFailure = response => {
+  // add success message in change password form
+  $('#changepassword-message').text('Password update failed, Please try again.')
 
-  $('#update-profile').trigger('reset') // clears the form
+  $('#change-password').trigger('reset') // clears the form
 
   setTimeout(() => { // removes failure message after 5 seconds
-    $('#updateprofile-message').text('')
+    $('#changepassword-message').text('')
   }, 5000)
 }
 
@@ -82,8 +82,8 @@ module.exports = {
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
-  onUpdateProfileSuccess,
-  onUpdateProfileFailure,
+  onChangePasswordSuccess,
+  onChangePasswordFailure,
   onSignOutSuccess,
   onSignOutFailure
 }

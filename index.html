@@ -60,7 +60,7 @@
         <nav id="slide-menu">
         	<ul>
         		<li id="entrylog-open">Event Log</li>
-        		<li id="update-open">Update Profile</li>
+        		<li id="changepassword-open">Change Password</li>
         		<li id="sign-out">Signout</li>
         	</ul>
         </nav>
@@ -148,18 +148,16 @@
         </div>
       </div>
 
-      <div id="updateprofile-modal" class="modal hidden">
+      <div id="changepassword-modal" class="modal hidden">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <form id="update-profile">
+          <form id="change-password">
             <fieldset>
-              <legend>Update Profile:</legend>
-              <p id="updateprofile-message"></p>
-              <label>Name: </label>
-              <input type="text" name="--match API doc--" placeholder="First, Last">
-              <label>Email: </label>
-              <input type="email" name="--match API doc--" placeholder="name@webaddress.com">
-              <label>Password: </label>
+              <legend>Change Password:</legend>
+              <p id="changepassword-message"></p>
+              <label>Old Password: </label>
+              <input type="password" name="--match API doc--" placeholder="*****">
+              <label>New Password: </label>
               <input type="password" name="--match API doc--" placeholder="*****">
               <label>Password Confrimation: </label>
               <input type="password" name="--match API doc--" placeholder="*****">

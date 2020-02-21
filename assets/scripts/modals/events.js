@@ -5,23 +5,23 @@
 // const ui = require('./ui')
 
 const openSignUp = event => {
-  //
+  $('#signup-modal').removeClass('hidden')
 }
 
 const openSignIn = event => {
-  //
+  $('#signin-modal').removeClass('hidden')
 }
 
 const openEntryLog = event => {
-  //
+  $('#entrylog-modal').removeClass('hidden')
 }
 
 const openUpdate = event => {
-  //
+  $('#updateprofile-modal').removeClass('hidden')
 }
 
 const closeModal = event => {
-  //
+  $('.modal').addClass('hidden')
 }
 
 const addHandlers = () => {

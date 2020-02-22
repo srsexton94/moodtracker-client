@@ -1,5 +1,5 @@
 
-curl "UPDATE URL/change-password" \
+curl "https://moodtracker-api.herokuapp.com/change-password" \
   --include \
   --request PATCH \
   --header "Authorization: Token token=${TOKEN}" \

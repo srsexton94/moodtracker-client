@@ -1,5 +1,5 @@
 
-curl "UPDATE URL/sign-up" \
+curl "https://moodtracker-api.herokuapp.com/sign-up" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \

@@ -1,5 +1,5 @@
 
-curl "UPDATE URL/sign-out" \
+curl "https://moodtracker-api.herokuapp.com/sign-out" \
   --include \
   --request DELETE \
   --header "Content-Type: application/json" \

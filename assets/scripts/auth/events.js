@@ -9,7 +9,7 @@ const onSignUp = event => {
 
   const form = event.target // saves form that was submitted into a variable
   const data = getFormFields(form) // getFormFields retrieves API-friendly data
-
+  // console.log(data)
   api.signUp(data) // POSTs user data to API, trigger success/failure cases
     .then(ui.onSignUpSuccess)
     .catch(ui.onSignUpFailure)

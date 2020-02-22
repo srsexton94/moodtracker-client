@@ -6,6 +6,10 @@ $accent: #aeaeae;
 $form: #fefefe;
 $shade: rgba(0, 0, 0, 0.1);
 
+label span {
+  font-size: 3vh;
+}
+
 li {
   display: inline;
   padding: 1em;

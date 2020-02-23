@@ -13,25 +13,30 @@
     </head>
     <body>
       <section id="title-page" class="title-page">
-        <h1>MoodTracker</h1>
-        <button id="signup-open">Sign Up</button>
-        <button id="signin-open">Sign In</button>
+        <header class="title-section">
+          <h1>MoodTracker</h1>
+          <button id="signup-open" class="btn btn-outline-light">Sign Up</button>
+          <button id="signin-open" class="btn btn-outline-light">Sign In</button>
+        </header>
       </section>
 
       <div id="signup-modal" class="modal hidden">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <form id="sign-up">
+          <form id="sign-up" class="auth">
             <fieldset>
               <legend>Sign Up:</legend>
               <p id="signup-message"></p>
-              <label>Email: </label>
-              <input type="email" name="credentials[email]" placeholder="name@webaddress.com">
-              <label>Password: </label>
-              <input type="password" name="credentials[password]" placeholder="*****">
-              <label>Password Confrimation: </label>
-              <input type="password" name="credentials[password_confirmation]" placeholder="*****">
-              <input class="submit" type="submit" name="submit" value="Submit">
+              <label>Email:
+                <input type="email" name="credentials[email]" placeholder="name@webaddress.com">
+              </label>
+              <label>Password:
+                <input type="password" name="credentials[password]" placeholder="*****">
+              </label>
+              <label>Confirm Password:
+                <input type="password" name="credentials[password_confirmation]" placeholder="*****">
+              </label>
+              <input class="submit btn-secondary" type="submit" name="submit" value="Submit">
               <a id="signup-to-signin" href="#">Already have an account? Sign in!</a>
             </fieldset>
           </form>
@@ -41,27 +46,29 @@
       <div id="signin-modal" class="modal hidden">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <form id="sign-in">
+          <form id="sign-in" class="auth">
             <fieldset>
               <legend>Sign In:</legend>
               <p id="signin-message"></p>
-              <label>Email: </label>
-              <input type="email" name="credentials[email]" placeholder="name@webaddress.com">
-              <label>Password: </label>
-              <input type="password" name="credentials[password]" placeholder="*****">
-              <input class="submit" type="submit" name="submit" value="Submit">
+              <label>Email:
+                <input type="email" name="credentials[email]" placeholder="name@webaddress.com">
+              </label>
+              <label>Password:
+                <input type="password" name="credentials[password]" placeholder="*****">
+              </label>
+              <input class="submit btn-secondary" type="submit" name="submit" value="Submit">
               <a id="signin-to-signup" href="#">Don't have an account? Sign up!</a>
             </fieldset>
           </form>
         </div>
       </div>
 
-      <main id="main" class="main">
+      <main id="main" class="main hidden">
         <nav id="slide-menu">
         	<ul>
-        		<li id="entrylog-open">Event Log</li>
-        		<li id="changepassword-open">Change Password</li>
-        		<li id="sign-out">Signout</li>
+        		<li id="entrylog-open"><a href="#">Event Log</a></li>
+        		<li id="changepassword-open"><a href="#">Change Password</a></li>
+        		<li id="signout-open"><a href="#">Signout</a></li>
         	</ul>
         </nav>
         <form id="tracker-submission" class="form">
@@ -137,7 +144,7 @@
             </div>
           </div>
           </fieldset>
-          <input class="submit" type="submit" name="submit" value="Submit">
+          <input class="submit btn-outline-primary" type="submit" name="submit" value="Submit">
         </form>
       </main>
 
@@ -149,20 +156,28 @@
         </div>
       </div>
 
+      <div id="signout-modal" class="modal hidden">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Are you sure you want to go?</p>
+          <button id="sign-out" class="btn btn-outline-danger btn-sm">Yes, Sign Out</button>
+        </div>
+      </div>
+
       <div id="changepassword-modal" class="modal hidden">
         <div class="modal-content">
           <span class="close">&times;</span>
-          <form id="change-password">
+          <form id="change-password" class="auth">
             <fieldset>
               <legend>Change Password:</legend>
               <p id="changepassword-message"></p>
-              <label>Old Password: </label>
-              <input type="password" name="passwords[old]" placeholder="*****">
-              <label>New Password: </label>
-              <input type="password" name="passwords[new]" placeholder="*****">
-              <label>Password Confrimation: </label>
-              <input type="password" name="--match API doc--" placeholder="*****">
-              <input class="submit" type="submit" name="submit" value="Submit">
+              <label>Old Password:
+                <input type="password" name="passwords[old]" placeholder="*****">
+              </label>
+              <label>New Password:
+                <input type="password" name="passwords[new]" placeholder="*****">
+              </label>
+              <input class="submit btn-secondary" type="submit" name="submit" value="Submit">
             </fieldset>
           </form>
         </div>

@@ -20,6 +20,10 @@ const openChangePassword = event => {
   $('#changepassword-modal').removeClass('hidden')
 }
 
+const openSignOut = event => {
+  $('#signout-modal').removeClass('hidden')
+}
+
 const closeModal = event => {
   $('.modal').addClass('hidden')
 }
@@ -39,6 +43,7 @@ const addHandlers = () => {
   $('#signin-open').on('click', openSignIn)
   $('#entrylog-open').on('click', openEntryLog)
   $('#changepassword-open').on('click', openChangePassword)
+  $('#signout-open').on('click', openSignOut)
   $('.close').on('click', closeModal)
   $('#signup-to-signin').on('click', upToIn)
   $('#signin-to-signup').on('click', inToUp)

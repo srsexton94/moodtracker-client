@@ -7,8 +7,7 @@ const ui = require('./ui')
 const onSignUp = event => {
   event.preventDefault() // prevents automatic page refresh
 
-  const form = event.target // saves form that was submitted into a variable
-  const data = getFormFields(form) // getFormFields retrieves API-friendly data
+  const data = getFormFields(event.target) // getFormFields retrieves API-friendly data
   // console.log(data)
   api.signUp(data) // POSTs user data to API, trigger success/failure cases
     .then(ui.onSignUpSuccess)
@@ -18,8 +17,7 @@ const onSignUp = event => {
 const onSignIn = event => { // the following all mirror previous comments
   event.preventDefault()
 
-  const form = event.target
-  const data = getFormFields(form)
+  const data = getFormFields(event.target)
 
   api.signIn(data)
     .then(ui.onSignInSuccess)
@@ -29,8 +27,7 @@ const onSignIn = event => { // the following all mirror previous comments
 const onChangePassword = event => {
   event.preventDefault()
 
-  const form = event.target
-  const data = getFormFields(form)
+  const data = getFormFields(event.target)
 
   api.onChangePassword(data)
     .then(ui.onChangePasswordSuccess)

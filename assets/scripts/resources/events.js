@@ -1,7 +1,7 @@
 'use strict'
 
 const getFormFields = require('../../../lib/get-form-fields.js')
-const api = require('./api.js')
+const api = require('./api.js') // why is this now throwing an error w/o .js end?
 const ui = require('./ui.js')
 
 const onSubmitForm = event => {

@@ -5,10 +5,11 @@ const store = require('./../store.js')
 const onSignUpSuccess = response => {
   $('#sign-up').trigger('reset') // clears the form
   $('#signup-modal').addClass('hidden')
-  $('#signin-modal').removeClass('hidden')
+  $('#signin-modal').removeClass('hidden') // "navigates" to sign-in
 }
 
 const onSignUpFailure = response => {
+  console.log(response)
   // add failure message in signup form
   $('#signup-message').text('Sorry, Sign up unsuccessful')
 
@@ -67,6 +68,7 @@ const onSignOutSuccess = response => {
   store.user = null // wipes signed-in users data clean
 
   // Navigates back to title page upon succesful sign out
+  $('.modal').addClass('hidden')
   $('#main').addClass('hidden')
   $('#title-page').removeClass('hidden')
 }

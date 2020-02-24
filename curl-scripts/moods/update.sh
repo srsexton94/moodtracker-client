@@ -7,12 +7,7 @@ curl "https://moodtracker-api.herokuapp.com/moods/${ID}" \
   --header "Authorization: Token token=${TOKEN}" \
   --data '{
     "mood": {
-      "happy": "'"${HAPPY}"'",
-      "calm": "'"${CALM}"'",
-      "sad": "'"${SAD}"'",
-      "nervous": "'"${NERVOUS}"'",
-      "motivated": "'"${MOTIVATED}"'",
-      "angry": "'"${ANGRY}"'"
+      "mood": "'"${MOOD}"'"
     }
   }'
 

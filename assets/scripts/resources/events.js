@@ -6,9 +6,9 @@ const ui = require('./ui.js')
 
 const onSubmitForm = event => {
   event.preventDefault()
-
+  // console.log('event.target:', event.target)
   const data = getFormFields(event.target)
-
+  // console.log('data:', data)
   api.postMood(data)
     .then(ui.onSubmitFormSuccess)
     .catch(ui.onSubmitFormFailure)

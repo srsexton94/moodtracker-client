@@ -1,7 +1,7 @@
 'use strict'
 
 const onSubmitFormSuccess = () => {
-  $('#form-message').text('Your form submitted successfully!')
+  $('#form-message').text('You submitted successfully!')
 }
 
 const onSubmitFormFailure = () => {

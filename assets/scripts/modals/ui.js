@@ -14,7 +14,7 @@ const showMoodsSuccess = (data) => {
 // }
 
 const onShowMoodsFailure = () => {
-  $('#entrylog-message').text('Apologies, an error occurred. Please try again later.')
+  $('#entrylog-message').text('Apologies, an error occurred. Please try again later.').css('color', 'red')
 }
 
 module.exports = {

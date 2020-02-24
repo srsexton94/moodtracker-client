@@ -5,7 +5,11 @@ const onSubmitFormSuccess = () => {
 }
 
 const onSubmitFormFailure = () => {
-  $('#form-message').text('There was an error, please try again later.')
+  $('#form-message').text('There was an error, please try again later.').css('color', 'red')
+
+  setTimeout(() => {
+    $('#form-message').text('') // clears the failure message after 5 seconds
+  }, 3000)
 }
 
 module.exports = {

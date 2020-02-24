@@ -11,13 +11,13 @@ const onSignUpSuccess = response => {
 const onSignUpFailure = response => {
   console.log(response)
   // add failure message in signup form
-  $('#signup-message').text('Sorry, Sign up unsuccessful')
+  $('#signup-message').text('Sorry, Sign up unsuccessful').css('color', 'red')
 
   $('#sign-up').trigger('reset') // clears the form
 
   setTimeout(() => {
     $('#signup-message').text('') // removes failure message after 5 seconds
-  }, 5000)
+  }, 3000)
 }
 
 const onSignInSuccess = response => {
@@ -35,13 +35,13 @@ const onSignInSuccess = response => {
 
 const onSignInFailure = response => {
   // add failure message in signin form
-  $('#signin-message').text('Email/Password incorrect, Please try again.')
+  $('#signin-message').text('Email/Password incorrect').css('color', 'red')
 
   $('#sign-in').trigger('reset') // clears the form
 
   setTimeout(() => {
     $('#signin-message').text('') // removes failure message after 5 seconds
-  }, 5000)
+  }, 3000)
 }
 
 const onChangePasswordSuccess = response => {
@@ -53,13 +53,13 @@ const onChangePasswordSuccess = response => {
 
 const onChangePasswordFailure = response => {
   // add failure message in change password form
-  $('#changepassword-message').text('Password update failed, Please try again.')
+  $('#changepassword-message').text('Password update failed.').css('color', 'red')
 
   $('#change-password').trigger('reset') // clears the form
 
   setTimeout(() => { // removes failure message after 5 seconds
     $('#changepassword-message').text('')
-  }, 5000)
+  }, 3000)
 }
 
 const onSignOutSuccess = response => {
@@ -75,13 +75,13 @@ const onSignOutSuccess = response => {
 
 const onSignOutFailure = response => {
   // add success message in signout form
-  $('#signout-message').text('Alert: Account still signed in.')
+  $('#signout-message').text('Error Alert: Account still signed in.').css('color', 'red')
 
   $('#sign-out').trigger('reset') // clears the form
 
   setTimeout(() => {
     $('#signout-message').text('') // clears the failure message after 5 seconds
-  }, 5000)
+  }, 3000)
 }
 
 module.exports = {

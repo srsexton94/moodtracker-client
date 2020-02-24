@@ -1,13 +1,15 @@
-{{#each moods as |entry|}}
-  {{log entry}}
-  <section data-id="{{entry.id}}" class="entry">
+{{#each moods as |mood|}}
+  {{log mood}}
+  <section data-id="{{mood.id}}" class="mood">
     <ul>
-      {{#each entry.keys as |mood|}}
-      {{#if mood}}
-        <li>{{mood}}</li>
+      {{#each mood.keys as |mood-key|}}
+      {{#if mood-key}}
+        <li>{{mood-key}}</li>
+      {{else}}
+        <p>No entry available</p>
       {{/if}}
     </ul>
-    <p>{{entry.timestamps}}</p>
-    <button class="btn btn-outline-danger" data-id="{{entry.id}}">Delete</button>
+    <p>{{mood.timestamps}}</p>
+    <button class="btn btn-outline-danger" data-id="{{mood.id}}">Delete</button>
   </section>
 {{/each}}

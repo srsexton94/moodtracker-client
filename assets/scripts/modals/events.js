@@ -1,50 +1,53 @@
 'use strict'
 
-// const getFormFields = require('../../../lib/get-form-fields.js')
 // const api = require('./api')
 // const ui = require('./ui')
 
-const openSignUp = event => {
+const onOpenSignUp = event => {
   $('#signup-modal').removeClass('hidden')
 }
 
-const openSignIn = event => {
+const onOpenSignIn = event => {
   $('#signin-modal').removeClass('hidden')
 }
 
-const openEntryLog = event => {
+const onOpenEntryLog = event => {
   $('#entrylog-modal').removeClass('hidden')
+
+  // api.showMoods()
+  //   .then(ui.onShowMoodsSuccess)
+  //   .catch(ui.onShowMoodsFailure)
 }
 
-const openChangePassword = event => {
+const onOpenChangePassword = event => {
   $('#changepassword-modal').removeClass('hidden')
 }
 
-const openSignOut = event => {
+const onOpenSignOut = event => {
   $('#signout-modal').removeClass('hidden')
 }
 
-const closeModal = event => {
+const onCloseModal = event => {
   $('.modal').addClass('hidden')
 }
 
 const upToIn = event => {
-  closeModal(event)
-  openSignIn(event)
+  onCloseModal(event)
+  onOpenSignIn(event)
 }
 
 const inToUp = event => {
-  closeModal(event)
-  openSignUp(event)
+  onCloseModal(event)
+  onOpenSignUp(event)
 }
 
 const addHandlers = () => {
-  $('#signup-open').on('click', openSignUp)
-  $('#signin-open').on('click', openSignIn)
-  $('#entrylog-open').on('click', openEntryLog)
-  $('#changepassword-open').on('click', openChangePassword)
-  $('#signout-open').on('click', openSignOut)
-  $('.close').on('click', closeModal)
+  $('#signup-open').on('click', onOpenSignUp)
+  $('#signin-open').on('click', onOpenSignIn)
+  $('#entrylog-open').on('click', onOpenEntryLog)
+  $('#changepassword-open').on('click', onOpenChangePassword)
+  $('#signout-open').on('click', onOpenSignOut)
+  $('.close').on('click', onCloseModal)
   $('#signup-to-signin').on('click', upToIn)
   $('#signin-to-signup').on('click', inToUp)
 }

@@ -1,8 +1,5 @@
 'use strict'
 
-// const api = require('./api')
-// const ui = require('./ui')
-
 const onOpenSignUp = event => {
   $('#signup-modal').removeClass('hidden')
 }
@@ -13,10 +10,6 @@ const onOpenSignIn = event => {
 
 const onOpenEntryLog = event => {
   $('#entrylog-modal').removeClass('hidden')
-
-  // api.showMoods()
-  //   .then(ui.onShowMoodsSuccess)
-  //   .catch(ui.onShowMoodsFailure)
 }
 
 const onOpenChangePassword = event => {
@@ -29,6 +22,8 @@ const onOpenSignOut = event => {
 
 const onCloseModal = event => {
   $('.modal').addClass('hidden')
+  $('#showLog').removeClass('hidden')
+  $('#mood-entries').text('')
 }
 
 const upToIn = event => {

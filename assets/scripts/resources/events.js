@@ -4,11 +4,19 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js') // why is this now throwing an error w/o .js end?
 const ui = require('./ui.js')
 
+const onShowMoods = event => {
+  event.preventDefault()
+
+  api.showMoods()
+    .then(ui.onShowMoodsSuccess)
+    .catch(ui.onShowMoodsFailure)
+}
+
 const onSubmitForm = event => {
   event.preventDefault()
-  // console.log('event.target:', event.target)
+
   const data = getFormFields(event.target)
-  console.log('data:', data)
+
   api.postMood(data)
     .then(ui.onSubmitFormSuccess)
     .catch(ui.onSubmitFormFailure)
@@ -16,6 +24,7 @@ const onSubmitForm = event => {
 
 const addHandlers = () => {
   $('#entry-submission').on('submit', onSubmitForm)
+  $('#showLog').on('click', onShowMoods)
 }
 
 module.exports = {

@@ -1,0 +1,13 @@
+{{#each moods as |entry|}}
+  {{log entry}}
+  <section data-id="{{entry.id}}" class="entry">
+    <ul>
+      {{#each entry.keys as |mood|}}
+      {{#if mood}}
+        <li>{{mood}}</li>
+      {{/if}}
+    </ul>
+    <p>{{entry.timestamps}}</p>
+    <button class="btn btn-outline-danger" data-id="{{entry.id}}">Delete</button>
+  </section>
+{{/each}}

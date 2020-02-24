@@ -2,8 +2,8 @@
 
 let apiUrl
 const apiUrls = {
-  production: 'https://moodtracker-api.herokuapp.com/',
-  development: 'http://localhost:4741/'
+  production: 'https://moodtracker-api.herokuapp.com',
+  development: 'http://localhost:4741'
 }
 
 if (window.location.hostname === 'localhost') {

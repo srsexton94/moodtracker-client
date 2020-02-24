@@ -15,6 +15,10 @@ const showMoodsSuccess = (data) => {
 
 const onShowMoodsFailure = () => {
   $('#entrylog-message').text('Apologies, an error occurred. Please try again later.').css('color', 'red')
+
+  setTimeout(() => {
+    $('#entrylog-message').text('') // clears the failure message after 5 seconds
+  }, 3000)
 }
 
 module.exports = {

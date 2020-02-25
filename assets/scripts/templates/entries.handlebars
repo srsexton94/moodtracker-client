@@ -2,6 +2,47 @@
   <section data-id={{mood.id}}>
     <h4>{{mood.mood}}</h4>
     <p>Posted on: {{date-time mood.created_at}}</p>
-    <button class="btn btn-outline-danger" data-id="{{mood.id}}">delete</button>
+    <button class="update btn btn-outline-secondary" data-id="{{mood.id}}">update</button>
+    <button class="delete btn btn-outline-danger" data-id="{{mood.id}}">delete</button>
+
+    <form data-id="{{mood.id}}" class="hidden">
+      <fieldset class="container">
+      <h3>Update this mood record:</h3>
+      <div class="row">
+        <div class="mood col-4 col-lg-2">
+          <label class="update-emoji" for="happy">
+            😊<input class="radio hidden" id="happy{{mood.id}}" type="radio" name="mood[mood]" value="happy">
+          </label>
+        </div>
+        <div class="mood col-4 col-lg-2">
+          <label class="update-emoji" for="calm">
+            😌<input class="radio hidden" id="calm{{mood.id}}" type="radio" name="mood[mood]" value="calm">
+          </label>
+        </div>
+        <div class="mood col-4 col-lg-2">
+          <label class="update-emoji" for="sad">
+            😢<input class="radio hidden" id="sad{{mood.id}}" type="radio" name="mood[mood]" value="sad">
+          </label>
+        </div>
+        <div class="mood col-4 col-lg-2">
+          <label class="update-emoji" for="nervous">
+            😰<input class="radio hidden" id="nervous{{mood.id}}" type="radio" name="mood[mood]" value="nervous">
+          </label>
+        </div>
+        <div class="mood col-4 col-lg-2">
+          <label class="update-emoji" for="motivated">
+            💪<input class="radio hidden" id="motivated{{mood.id}}" type="radio" name="mood[mood]" value="motivated">
+          </label>
+        </div>
+        <div class="mood col-4 col-lg-2">
+          <label class="update-emoji" for="angry">
+            😡<input class="radio hidden" id="angry{{mood.id}}" type="radio" name="mood[mood]" value="angry">
+          </label>
+        </div>
+      </div>
+      </fieldset>
+      <input class="submit btn-outline-primary" type="submit">
+    </form>
+
   </section>
 {{/each}}

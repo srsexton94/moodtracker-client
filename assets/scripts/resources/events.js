@@ -33,11 +33,18 @@ const onDeleteMood = event => {
     .catch(ui.onEntryLogFailure) // shares failure message w/showMoods
 }
 
+const openUpdateMood = event => {
+  event.preventDefault() // prevents page refresh
+
+  // console.log(event.target)
+}
+
 // Event handlers for all actions to do with non-auth API resource(s)
 const addHandlers = () => {
   $('#entry-submission').on('submit', onPostMood)
   $('#showLog').on('click', onShowMoods)
-  $('#mood-entries').on('click', '.btn', onDeleteMood)
+  $('#mood-entries').on('click', '.delete', onDeleteMood)
+  $('#mood-entries').on('click', '.update', openUpdateMood)
 }
 
 module.exports = {

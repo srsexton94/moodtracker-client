@@ -13,14 +13,14 @@ const onShowMoods = event => {
     .catch(ui.onEntryLogFailure) // shares failure message w/deleteMood
 }
 
-const onSubmitForm = event => {
+const onPostMood = event => {
   event.preventDefault() // prevents page refresh
 
   const data = getFormFields(event.target) // submission formatted as usable data
 
   api.postMood(data) // sends mood form data to API, POST request
-    .then(ui.onSubmitFormSuccess) // empties mood message, posts success message
-    .catch(ui.onSubmitFormFailure) // posts failure message
+    .then(ui.onPostMoodSuccess) // empties mood message, posts success message
+    .catch(ui.onPostMoodFailure) // posts failure message
 }
 
 const onDeleteMood = event => {
@@ -35,7 +35,7 @@ const onDeleteMood = event => {
 
 // Event handlers for all actions to do with non-auth API resource(s)
 const addHandlers = () => {
-  $('#entry-submission').on('submit', onSubmitForm)
+  $('#entry-submission').on('submit', onPostMood)
   $('#showLog').on('click', onShowMoods)
   $('#mood-entries').on('click', '.btn', onDeleteMood)
 }

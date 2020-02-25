@@ -2,7 +2,7 @@
 
 const showMoodsTemplate = require('../templates/entries.handlebars')
 
-const onSubmitFormSuccess = () => {
+const onPostMoodSuccess = () => {
   $('#mood-message').text('') // empties mood-selection message (eg. 'happy?' 'sad?')
   // posts success message, colored green for visibility
   $('#form-message').text('You submitted successfully!').css('color', 'green')
@@ -12,7 +12,7 @@ const onSubmitFormSuccess = () => {
   }, 2000)
 }
 
-const onSubmitFormFailure = () => {
+const onPostMoodFailure = () => {
   // alerts user to form submission failure, colored red for visibility
   $('#form-message').text('There was an error, please try again later.').css('color', 'red')
 
@@ -41,8 +41,8 @@ const onEntryLogFailure = () => {
 }
 
 module.exports = {
-  onSubmitFormSuccess,
-  onSubmitFormFailure,
+  onPostMoodSuccess,
+  onPostMoodFailure,
   onShowMoodsSuccess,
   onEntryLogFailure
 }

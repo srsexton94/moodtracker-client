@@ -10,6 +10,10 @@ const onOpenSignIn = event => {
   $('#signin-modal').removeClass('hidden')
 }
 
+const onOpenDataVisual = event => {
+  $('#datavisual-modal').removeClass('hidden')
+}
+
 const onOpenEntryLog = event => {
   $('#entrylog-modal').removeClass('hidden')
 }
@@ -45,6 +49,7 @@ const inToUp = event => {
 const addHandlers = () => {
   $('#signup-open').on('click', onOpenSignUp)
   $('#signin-open').on('click', onOpenSignIn)
+  $('#datavisual-open').on('click', onOpenDataVisual)
   $('#entrylog-open').on('click', onOpenEntryLog)
   $('#changepassword-open').on('click', onOpenChangePassword)
   $('#signout-open').on('click', onOpenSignOut)

@@ -66,6 +66,7 @@
       <main id="main" class="hidden">
         <nav id="slide-menu">
         	<ul>
+            <li id="datavisual-open"><a href="#">See Trends</a></li>
         		<li id="entrylog-open"><a href="#">Entry Log</a></li>
         		<li id="changepassword-open"><a href="#">Change Password</a></li>
         		<li id="signout-open"><a href="#">Signout</a></li>
@@ -112,6 +113,18 @@
           <input class="submit btn-outline-primary" type="submit">
         </form>
       </main>
+
+      <div id="datavisual-modal" class="modal hidden">
+        <div class="modal-content">
+          <span id="datavisual-close" class="close">&times;</span>
+          <article id="data-visual">
+            <p id="datavisual-message"></p>
+            <button id="showMoodVisual" class="data-button btn btn-outline-primary">Mood Trends</button>
+            <div id="mood-visual" class="mood-visual"></div>
+            <!-- add more buttons & divs for further chart options? -->
+          </article>
+        </div>
+      </div>
 
       <div id="entrylog-modal" class="modal hidden">
         <div class="modal-content">

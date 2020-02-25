@@ -66,11 +66,11 @@ ul {
   display: block;
   height: 100%;
   left: 0;
+  overflow-y: scroll;
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
-  overflow-y: scroll;
 }
 
 .modal-content {

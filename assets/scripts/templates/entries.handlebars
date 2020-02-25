@@ -1,6 +1,6 @@
 {{#each moods as |mood|}}
   <section data-id={{mood.id}}>
     <h4>{{mood.mood}}</h4>
-    <p>Posted on: {{mood.created_at}}</p>
+    <p>Posted on: {{date-time mood.created_at}}</p>
   </section>
 {{/each}}

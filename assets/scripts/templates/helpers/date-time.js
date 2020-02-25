@@ -7,10 +7,7 @@ const dateTime = str => {
   const day = str.substring(5, 7)
   const month = str.substring(8, 10)
   let hour = parseInt(str.substring(11, 13)) + 7 // add 7 to set to our time zone (EST)
-  let min = parseInt(str.substring(14, 16))
-
-  // if the minute value is 0, still print two digits
-  if (min === 0) { min = '00' }
+  let min = str.substring(14, 16)
 
   if (hour >= 19) { // if it's the afternoon, add 'pm'
     min += ' pm'

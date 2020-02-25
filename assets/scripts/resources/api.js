@@ -34,8 +34,20 @@ const deleteMood = id => {
   })
 }
 
+const updateMood = (data, id) => {
+  return $.ajax({
+    url: config.apiUrl + '/moods/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   postMood,
   showMoods,
-  deleteMood
+  deleteMood,
+  updateMood
 }

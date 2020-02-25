@@ -6,7 +6,7 @@ const ui = require('./ui.js')
 
 const onShowMoods = event => {
   // if statement runs prevent default only when passed an event
-  if (event) { event.preventDefault() } // prevents page refresh
+  event.preventDefault() // prevents page refresh
 
   api.showMoods() // displays API mood data, GET (index) request
     .then(ui.onShowMoodsSuccess) // formats & posts API data to entry log modal
@@ -29,14 +29,31 @@ const onDeleteMood = event => {
   const id = $(event.target).data('id') // finds the buttons data-id
 
   api.deleteMood(id) // destroys mood entry in API, DELETE request
-    .then(onShowMoods) // upon success, refresh entry log
+    .then(function () {
+      onShowMoods(event)
+    }) // upon success, refresh entry log
     .catch(ui.onEntryLogFailure) // shares failure message w/showMoods
 }
 
-const openUpdateMood = event => {
+const openUpdateForm = event => {
   event.preventDefault() // prevents page refresh
 
-  // console.log(event.target)
+  const id = $(event.target).data('id') // finds the buttons data-id
+  const formid = '#form' + id // uses buttons data-id to find form id
+  $(formid).removeClass('hidden') // reveals the form
+}
+
+const onUpdateMood = event => {
+  event.preventDefault() // prevents page refresh
+
+  const id = $(event.target).data('id') // gets resource ID from data-id of log
+  const data = getFormFields(event.target) // submission formatted as usable data
+
+  api.updateMood(data, id) // updates mood entry in API, PATCH request
+    .then(function () {
+      onShowMoods(event)
+    }) // upon success, refresh entry log
+    .catch(ui.onEntryLogFailure) // shares failure message w/show & delete actions
 }
 
 // Event handlers for all actions to do with non-auth API resource(s)
@@ -44,7 +61,8 @@ const addHandlers = () => {
   $('#entry-submission').on('submit', onPostMood)
   $('#showLog').on('click', onShowMoods)
   $('#mood-entries').on('click', '.delete', onDeleteMood)
-  $('#mood-entries').on('click', '.update', openUpdateMood)
+  $('#mood-entries').on('click', '.update', openUpdateForm)
+  $('#mood-entries').on('submit', '.form', onUpdateMood)
 }
 
 module.exports = {

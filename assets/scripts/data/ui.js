@@ -1,5 +1,8 @@
 'use strict'
 
+// const Chart = require('chart.js')
+// const myChart = new Chart(ctx, {})
+
 const onShowMoodVisualSuccess = data => {
   console.log(data) // console.logging to view format
 }

@@ -5,43 +5,44 @@ const api = require('./api')
 const ui = require('./ui')
 
 const onSignUp = event => {
-  event.preventDefault() // prevents automatic page refresh
+  event.preventDefault() // prevents page refresh
 
-  const data = getFormFields(event.target) // getFormFields retrieves API-friendly data
-  console.log(data)
-  api.signUp(data) // POSTs user data to API, trigger success/failure cases
-    .then(ui.onSignUpSuccess)
-    .catch(ui.onSignUpFailure)
+  const data = getFormFields(event.target) // formats form submission data
+
+  api.signUp(data) // sends user data to API, POST request
+    .then(ui.onSignUpSuccess) // clears form, hides signUp modal, reveals signIn
+    .catch(ui.onSignUpFailure) // clears form, posts failure message
 }
 
-const onSignIn = event => { // the following all mirror previous comments
-  event.preventDefault()
+const onSignIn = event => {
+  event.preventDefault() // prevents page refresh
 
-  const data = getFormFields(event.target)
+  const data = getFormFields(event.target) // formats form submission data
 
-  api.signIn(data)
-    .then(ui.onSignInSuccess)
-    .catch(ui.onSignInFailure)
+  api.signIn(data) // sends user data to API, POST request
+    .then(ui.onSignInSuccess) // clears form, stores user data, navigates to main page
+    .catch(ui.onSignInFailure) // clears form, posts failure message
 }
 
 const onChangePassword = event => {
-  event.preventDefault()
+  event.preventDefault() // prevents page refresh
 
-  const data = getFormFields(event.target)
+  const data = getFormFields(event.target) // formats form submission data
 
-  api.changePassword(data)
-    .then(ui.onChangePasswordSuccess)
-    .catch(ui.onChangePasswordFailure)
+  api.changePassword(data) // sends new data to API, PATCH request
+    .then(ui.onChangePasswordSuccess) // clears form, navigates back to main page
+    .catch(ui.onChangePasswordFailure) // clears form, sends failure message
 }
 
 const onSignOut = event => {
-  event.preventDefault()
+  event.preventDefault() // prevents page refresh
 
-  api.signOut()
-    .then(ui.onSignOutSuccess)
-    .catch(ui.onSignOutFailure)
+  api.signOut() // removes user API data from sign-in, DELETE request
+    .then(ui.onSignOutSuccess) // wipes stored user data, navigates to title page
+    .catch(ui.onSignOutFailure) // sends failure message
 }
 
+// event handlers for each authentication submission
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)

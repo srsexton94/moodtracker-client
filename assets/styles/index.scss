@@ -1,20 +1,14 @@
 @import '~bootstrap/scss/bootstrap';
 $accent: #aeaeae;
-$background: rgba(0, 0, 0, 0.4);
+$background: rgba(0, 0, 0, .4);
 $focus: #000;
 $form: #fefefe;
-$shade: rgba(0, 0, 0, 0.1);
+$shade: rgba(0, 0, 0, .1);
 $title: #314cb6;
 
 a {
   color: $accent;
   text-decoration: none;
-
-  // can't get this to work...
-  :hover {
-    color: $focus;
-    text-decoration: none;
-  }
 }
 
 label {
@@ -48,9 +42,6 @@ ul {
     cursor: pointer;
     text-decoration: none;
   }
-}
-
-.auth {
 }
 
 .emoji {
@@ -91,11 +82,6 @@ ul {
 .submit {
   display: block;
   margin: auto;
-}
-
-// why can't I get this to work?
-.title-page {
-  background-image: image('./public/night-sky.jpg');
 }
 
 .title-section {

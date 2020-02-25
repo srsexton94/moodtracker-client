@@ -4,43 +4,40 @@ const store = require('./../store.js')
 
 const onSignUpSuccess = response => {
   $('#sign-up').trigger('reset') // clears the form
-  $('#signup-modal').addClass('hidden')
-  $('#signin-modal').removeClass('hidden') // "navigates" to sign-in
+  $('#signup-modal').addClass('hidden') // ensures signUp modal left hidden
+  $('#signin-modal').removeClass('hidden') // "navigates" to (reveals) sign-in
 }
 
 const onSignUpFailure = response => {
-  console.log(response)
-  // add failure message in signup form
+  // posts failure message in signup form, colored red for visibility
   $('#signup-message').text('Sorry, Sign up unsuccessful').css('color', 'red')
 
   $('#sign-up').trigger('reset') // clears the form
 
   setTimeout(() => {
-    $('#signup-message').text('') // removes failure message after 5 seconds
+    $('#signup-message').text('') // removes failure message after 3 seconds
   }, 3000)
 }
 
 const onSignInSuccess = response => {
-  $('#sign-in').trigger('reset') // clears the form
-
   // stores the response data in 'store.js' to access authentication token later
   store.user = response.user
-  store.user.games = []
 
-  // Navigates to main page upon successful sign in
-  $('#signin-modal').addClass('hidden')
-  $('#title-page').addClass('hidden')
-  $('#main').removeClass('hidden')
+  $('#sign-in').trigger('reset') // clears the form
+
+  $('#signin-modal').addClass('hidden') // ensures signIn modal is left hidden
+  $('#title-page').addClass('hidden') // hides ("navigates" from) title page
+  $('#main').removeClass('hidden') // "navigates" to (reveals) main page
 }
 
 const onSignInFailure = response => {
-  // add failure message in signin form
+  // add failure message in signin form, colored red for visibility
   $('#signin-message').text('Email/Password incorrect').css('color', 'red')
 
   $('#sign-in').trigger('reset') // clears the form
 
   setTimeout(() => {
-    $('#signin-message').text('') // removes failure message after 5 seconds
+    $('#signin-message').text('') // removes failure message after 3 seconds
   }, 3000)
 }
 
@@ -52,19 +49,18 @@ const onChangePasswordSuccess = response => {
 }
 
 const onChangePasswordFailure = response => {
-  // add failure message in change password form
+  // add failure message in change password form, colored red for visibility
   $('#changepassword-message').text('Password update failed.').css('color', 'red')
 
   $('#change-password').trigger('reset') // clears the form
 
-  setTimeout(() => { // removes failure message after 5 seconds
+  setTimeout(() => { // removes failure message after 3 seconds
     $('#changepassword-message').text('')
   }, 3000)
 }
 
 const onSignOutSuccess = response => {
-  $('#sign-out').trigger('reset') // clears the form
-
+  // $('#sign-out').trigger('reset') // clears the form - necessary??
   store.user = null // wipes signed-in users data clean
 
   // Navigates back to title page upon succesful sign out
@@ -74,13 +70,12 @@ const onSignOutSuccess = response => {
 }
 
 const onSignOutFailure = response => {
+  // $('#sign-out').trigger('reset') // clears the form - necessary??
   // add success message in signout form
   $('#signout-message').text('Error Alert: Account still signed in.').css('color', 'red')
 
-  $('#sign-out').trigger('reset') // clears the form
-
   setTimeout(() => {
-    $('#signout-message').text('') // clears the failure message after 5 seconds
+    $('#signout-message').text('') // clears the failure message after 3 seconds
   }, 3000)
 }
 

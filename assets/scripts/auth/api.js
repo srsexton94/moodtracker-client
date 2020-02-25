@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-// post form data to the API
+// post form data to the user API
 const signUp = data => {
   return $.ajax({
     url: config.apiUrl + '/sign-up',
@@ -12,7 +12,7 @@ const signUp = data => {
   })
 }
 
-// post form data to API, retrieves authentication token
+// post form data to user API, retrieves authentication token
 const signIn = data => {
   return $.ajax({
     url: config.apiUrl + '/sign-in',
@@ -21,7 +21,7 @@ const signIn = data => {
   })
 }
 
-// requiring authentication token, edit portion of API data (password)
+// requiring authentication token, edits user API password data
 const changePassword = data => {
   return $.ajax({
     url: config.apiUrl + '/change-password',
@@ -33,7 +33,7 @@ const changePassword = data => {
   })
 }
 
-// removes user data from the store object
+// removes user data from the user API
 const signOut = () => {
   return $.ajax({
     url: config.apiUrl + '/sign-out',

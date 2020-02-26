@@ -57,14 +57,23 @@
                 <input type="password" name="credentials[password]" placeholder="*****">
               </label>
               <input class="submit btn-secondary" type="submit" name="submit" value="Submit">
-              <a id="signin-to-signup" href="#">Don't have an account? Sign up!</a>
+              <a id="signin-to-signup" class="nav-link" href="#">Don't have an account? Sign up!</a>
             </fieldset>
           </form>
         </div>
       </div>
 
       <main id="main" class="hidden">
-        <nav id="slide-menu">
+
+        <button id="mobilenav-open" class="hamburger mobilenav-open">
+          <div class="ham-line"></div>
+          <div class="ham-line"></div>
+          <div class="ham-line"></div>
+        </button>
+
+        <button id="mobilenav-close" class="hamburger mobilenav-close">X</button>
+
+        <nav id="mobilenav" class="mobilenav">
         	<ul>
             <li id="datavisual-open"><a href="#">See Trends</a></li>
         		<li id="entrylog-open"><a href="#">Entry Log</a></li>
@@ -72,6 +81,7 @@
         		<li id="signout-open"><a href="#">Signout</a></li>
         	</ul>
         </nav>
+
         <form id="entry-submission" class="form">
           <fieldset id="mood-fieldset" class="container">
           <h2>How are you feeling right now?</h2>

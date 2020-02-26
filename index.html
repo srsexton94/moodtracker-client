@@ -78,15 +78,15 @@
             <li id="datavisual-open"><a href="#">See Trends</a></li>
         		<li id="entrylog-open"><a href="#">Entry Log</a></li>
         		<li id="changepassword-open"><a href="#">Change Password</a></li>
-        		<li id="signout-open"><a href="#">Signout</a></li>
+        		<li id="signout-open"><a href="#">Sign Out</a></li>
         	</ul>
         </nav>
 
         <form id="entry-submission" class="form">
           <fieldset id="mood-fieldset" class="container">
           <h2>How are you feeling right now?</h2>
-          <p id="form-message" class="form-message"></p>
-          <p id="mood-message"></p>
+          <p id="form-message" class="form-message message"></p>
+          <p id="mood-message" class="message"></p>
           <div class="row">
             <div class="mood col-4 col-lg-2">
               <label class="emoji" for="happy">
@@ -128,7 +128,7 @@
         <div class="datavisual-modalcontent modal-content">
           <span id="datavisual-close" class="close">&times;</span>
           <article id="data-visual">
-            <p id="datavisual-message"></p>
+            <p id="datavisual-message" class="message"></p>
             <button id="showMoodVisual" class="reveal-btn btn btn-outline-primary">Mood Trends</button>
             <div id="mood-visual" class="mood-visual modal-display"></div>
             <canvas id="chart" class="chart"></canvas>
@@ -140,8 +140,8 @@
       <div id="entrylog-modal" class="modal hidden">
         <div class="modal-content">
           <span id="entrylog-close" class="close">&times;</span>
-          <article id="entry-log">
-            <p id="entrylog-message"></p>
+          <article id="entry-log" class="entry-log">
+            <p id="entrylog-message" class="message"></p>
             <button id="showLog" class="reveal-btn btn btn-outline-primary">See Prior Entries</button>
             <div id="mood-entries" class="mood-entries modal-display"></div>
           </article>
@@ -162,7 +162,7 @@
           <form id="change-password" class="auth">
             <fieldset>
               <legend>Change Password:</legend>
-              <p id="changepassword-message"></p>
+              <p id="changepassword-message" class="message"></p>
               <label>Old Password:
                 <input type="password" name="passwords[old]" placeholder="*****">
               </label>

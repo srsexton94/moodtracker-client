@@ -31,7 +31,8 @@ const onCloseModal = event => {
 
   $('.reveal-btn').removeClass('hidden') // reveal modal buttons for later use
   $('.modal-display').text('') // ensure entry log is emptied
-  $('#chart').hide()
+  $('#chart').hide() // ensure trends chart is emptied
+  $('.message').text('') // ensure message posts are emptied
 }
 
 // navigates from signUp to signIn

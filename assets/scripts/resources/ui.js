@@ -22,13 +22,16 @@ const onPostMoodFailure = () => {
 }
 
 const onShowMoodsSuccess = data => {
+  if (data.moods.length === 0) {
+    $('#entrylog-message').text('No Available Entries.')
+  }
   // Gets the data from the api & sends to template
   // Returns HTML code postulated with the API data sent
   const showMoodsHtml = showMoodsTemplate({ moods: data.moods })
 
   // Uses the compiled HTML and adds it to the page
   $('#mood-entries').html(showMoodsHtml)
-  $('#showLog').addClass('hidden') // hides the "show prior entries" button
+  $('#showLog').addClass('hidden') // hides the button
 }
 
 const onEntryLogFailure = () => {

@@ -29,9 +29,9 @@ const onOpenSignOut = event => {
 const onCloseModal = event => {
   $('.modal').addClass('hidden') // upon closing any modal, ensure all modals are hidden
 
-  // in case the modal closed is the entry log...
   $('.reveal-btn').removeClass('hidden') // reveal modal buttons for later use
   $('.modal-display').text('') // ensure entry log is emptied
+  $('#chart').hide()
 }
 
 // navigates from signUp to signIn

@@ -3,7 +3,7 @@
 const config = require('../config')
 const store = require('../store')
 
-const showMoods = () => {
+const indexMoods = () => {
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/moods',
@@ -14,5 +14,5 @@ const showMoods = () => {
 }
 
 module.exports = {
-  showMoods
+  indexMoods
 }

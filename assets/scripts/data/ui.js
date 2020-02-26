@@ -1,19 +1,57 @@
 'use strict'
 
-const moodVisualTemplate = require('../templates/moodvisual.handlebars')
-// const Chart = require('chart.js')
-// const myChart = new Chart(ctx, {})
+const Chart = require('chart.js')
+
+const moodsArr = ['happy', 'calm', 'sad', 'nervous', 'motivated', 'angry']
+
+const findMoodCount = data => {
+  const countArr = [0, 0, 0, 0, 0, 0]
+  data.forEach(entry => {
+    const moodIndex = moodsArr.indexOf(entry.mood)
+    countArr[moodIndex] += 1
+  })
+  return countArr
+}
 
 const onShowMoodVisualSuccess = data => {
-  // data format { mood: [ {id, mood, created_at, user}, {}, {}, {}, ... {} ] }
+  // returns an array of how many times each mood was selected
+  const countArr = findMoodCount(data.moods)
+  $('#chart').show()
+  const ctx = $('#chart')
 
-  // Gets the data from the api & sends to template
-  // Returns HTML code postulated with the API data sent
-  const moodVisualHtml = moodVisualTemplate(data)
+  Chart.defaults.global.defaultFontFamily = 'Lato'
+  Chart.defaults.global.defaultFontSize = 18
 
-  // Uses the compiled HTML and adds it to the page
+  const moodChart = new Chart(ctx, {
+    type: 'bar', // options: bar, horizontalBar, pie, line, doughnut, radar, polarArea
+    data: {
+      labels: moodsArr,
+      datasets: [{
+        label: 'mood count',
+        data: countArr,
+        backgroundColor: [
+          'yellow',
+          'blue',
+          'purple',
+          'orange',
+          'green',
+          'red'
+        ]
+      }],
+      options: {
+        title: {
+          display: true,
+          text: 'Your Mood Meter',
+          fontSize: 30
+        },
+        legend: { display: false },
+        layout: { padding: 0 }
+      }
+    }
+  })
+
   $('.reveal-btn').addClass('hidden') // hides the button upon chart reveal
-  $('#mood-visual').html(moodVisualHtml)
+  return moodChart
 }
 
 const onDataVisualFailure = () => {

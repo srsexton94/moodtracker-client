@@ -1,6 +1,7 @@
 'use strict'
 
 const store = require('./../store.js')
+const ux = require('./../ux/events')
 
 const onSignUpSuccess = response => {
   $('#sign-up').trigger('reset') // clears the form
@@ -67,6 +68,7 @@ const onSignOutSuccess = response => {
   $('.modal').addClass('hidden')
   $('#main').addClass('hidden')
   $('#title-page').removeClass('hidden')
+  ux.closeMobileNav() // collapses mobile navbar
 }
 
 const onSignOutFailure = response => {

@@ -1,12 +1,12 @@
 'use strict'
 
-const openMobileNav = event => {
+const openMobileNav = () => {
   $('#mobilenav-open').css('display', 'none')
   $('#mobilenav').css('display', 'block')
   $('#mobilenav-close').css('display', 'inline-block')
 }
 
-const closeMobileNav = event => {
+const closeMobileNav = () => {
   $('#mobilenav').css('display', 'none')
   $('#mobilenav-close').css('display', 'none')
   $('#mobilenav-open').css('display', 'block')
@@ -24,5 +24,6 @@ const addHandlers = () => {
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  closeMobileNav
 }

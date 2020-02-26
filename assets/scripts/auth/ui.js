@@ -45,6 +45,8 @@ const onSignInFailure = response => {
 const onChangePasswordSuccess = response => {
   $('#change-password').trigger('reset') // clears the form
 
+  $('#change-password').trigger('reset') // clears the form
+
   // Navigates back to the main page upon successful form submission
   $('#changepassword-modal').addClass('hidden')
 }

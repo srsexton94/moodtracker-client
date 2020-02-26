@@ -110,13 +110,25 @@ nav {
   width: 80vw;
 }
 
+.reveal-btn {
+  display: block;
+  margin: auto;
+}
+
 // Page Styling...
 body {
   background-color: $body;
 }
 
+h1 {
+  color: $form;
+  font-family: fantasy;
+  font-size: 7vh;
+}
+
 h2 {
   color: $title;
+  font-family: fantasy;
 }
 
 .emoji {

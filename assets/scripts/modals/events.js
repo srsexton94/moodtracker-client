@@ -30,8 +30,8 @@ const onCloseModal = event => {
   $('.modal').addClass('hidden') // upon closing any modal, ensure all modals are hidden
 
   // in case the modal closed is the entry log...
-  $('#showLog').removeClass('hidden') // reveal the "show prev. entries" button
-  $('#mood-entries').text('') // ensure entry log is emptied
+  $('.reveal-btn').removeClass('hidden') // reveal modal buttons for later use
+  $('.modal-display').text('') // ensure entry log is emptied
 }
 
 // navigates from signUp to signIn

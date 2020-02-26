@@ -1,10 +1,19 @@
 'use strict'
 
+const moodVisualTemplate = require('../templates/moodvisual.handlebars')
 // const Chart = require('chart.js')
 // const myChart = new Chart(ctx, {})
 
 const onShowMoodVisualSuccess = data => {
-  console.log(data) // console.logging to view format
+  // data format { mood: [ {id, mood, created_at, user}, {}, {}, {}, ... {} ] }
+
+  // Gets the data from the api & sends to template
+  // Returns HTML code postulated with the API data sent
+  const moodVisualHtml = moodVisualTemplate(data)
+
+  // Uses the compiled HTML and adds it to the page
+  $('.reveal-btn').addClass('hidden') // hides the button upon chart reveal
+  $('#mood-visual').html(moodVisualHtml)
 }
 
 const onDataVisualFailure = () => {

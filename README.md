@@ -2,12 +2,12 @@
 # MoodTracker
 
 ##### Front End:
-- [GitHub]()
-- [Client URL]()
+- [GitHub](https://github.com/srsexton94/moodtracker-client)
+- [Client URL](https://srsexton94.github.io/moodtracker-client/)
 
 ##### Back End:
-- [GitHub]()
-- [Server URL]()
+- [GitHub](https://github.com/srsexton94/moodtracker-api)
+- [Server URL](https://moodtracker-api.herokuapp.com/)
 
 ## Objective
 Independently create a full-stack application (SPA) with a custom, RESTful API.

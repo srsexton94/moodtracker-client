@@ -2,7 +2,6 @@
 # MoodTracker
 
 ##### Front End:
-- [GitHub](https://github.com/srsexton94/moodtracker-client)
 - [Client URL](https://srsexton94.github.io/moodtracker-client/)
 
 ##### Back End:
@@ -20,13 +19,11 @@ The application must meet certain specifications..
 * Make frequent and cohesive edits throughout the project
 * Must provide all authentication actions & 4+ RESTful routes
 
-## Technologies Used
+## Technologies Used in Front End
 ##### Languages
 * HTML5
 * CSS3
 * JavaScript (ES6)
-* Ruby
-* SQL
 
 ##### Libraries/Frameworks/etc...
 * Sass
@@ -34,9 +31,6 @@ The application must meet certain specifications..
 * jQuery
 * AJAX
 * Handlebars
-* Rails5
-* PostgreSQL
-* RSpec
 * cURL
 * Chart.js
 
@@ -111,10 +105,6 @@ As a user I want to...
 - View a particular previous entry
 - View all of my previous entries
 - Delete an entry
-
-#### Entity Relationship Diagrams
-In the project planning stage, for the back endof this project, an [inital MoodTracker ERD](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A82eb9e85-769c-4066-9a72-4e8d96d2754f) links the user resource to an 'entries' resource (one to many) and then the 'entries' to both a 'needs' and a 'moods' resource.  Given the scope of the project those relationships were scaled down significantly to instead model a single, one-to-many relationship between 'one' User and 'many' Moods.
-If the project expands in the future to incorporate the needs resource after all, it is recommended that the User-Mood relationship be maintained while adding another one-to-many relationship between 'one' Mood and 'many' Needs.
 
 #### Problem Solving
 In the beginning of this project, in order to approach the task at hand, a rough outline of a possible timetable/progression was laid out:

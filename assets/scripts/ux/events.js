@@ -1,18 +1,19 @@
 'use strict'
 
-const openMobileNav = () => {
+const openMobileNav = () => { // hides hamburger, reveals nav & 'x'
   $('#mobilenav-open').css('display', 'none')
   $('#mobilenav').css('display', 'block')
   $('#mobilenav-close').css('display', 'inline-block')
 }
 
-const closeMobileNav = () => {
+const closeMobileNav = () => { // hides nav & 'x', reveals hamburger
   $('#mobilenav').css('display', 'none')
   $('#mobilenav-close').css('display', 'none')
   $('#mobilenav-open').css('display', 'block')
 }
 
 const selectRadio = event => {
+  // posts clarifying/identifying message upon mood selection
   const myMood = event.target.id + '?'
   $('#mood-message').text(myMood)
 }

@@ -27,8 +27,7 @@ const onOpenSignOut = event => {
 }
 
 const onCloseModal = event => {
-  $('.modal').addClass('hidden') // upon closing any modal, ensure all modals are hidden
-
+  $('.modal').addClass('hidden') // upon closing any modal, ensure all are hidden
   $('.reveal-btn').removeClass('hidden') // reveal modal buttons for later use
   $('.modal-display').text('') // ensure entry log is emptied
   $('#chart').hide() // ensure trends chart is emptied

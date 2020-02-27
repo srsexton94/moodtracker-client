@@ -7,7 +7,7 @@ const onShowMoodVisual = event => {
   event.preventDefault() // prevents page refresh
 
   api.indexMoods() // displays API mood data, GET (index) request
-    .then(ui.onShowMoodVisualSuccess) // WHAT WE DOIN HERE
+    .then(ui.onShowMoodVisualSuccess) // displays bar chart of all selections
     .catch(ui.onDataVisualFailure) // posts failure message
 }
 

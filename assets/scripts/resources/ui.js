@@ -22,11 +22,11 @@ const onPostMoodFailure = () => {
 }
 
 const onShowMoodsSuccess = data => {
-  if (data.moods.length === 0) {
+  if (data.moods.length === 0) { // if there are no entries post message
     $('#entrylog-message').text('No Available Entries.')
   }
-  // Gets the data from the api & sends to template
-  // Returns HTML code postulated with the API data sent
+
+  // Sends API data to template, returns HTML code
   const showMoodsHtml = showMoodsTemplate({ moods: data.moods })
 
   // Uses the compiled HTML and adds it to the page

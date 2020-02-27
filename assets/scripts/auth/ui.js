@@ -5,8 +5,8 @@ const ux = require('./../ux/events')
 
 const onSignUpSuccess = response => {
   $('#sign-up').trigger('reset') // clears the form
-  $('#signup-modal').addClass('hidden') // ensures signUp modal left hidden
-  $('#signin-modal').removeClass('hidden') // "navigates" to (reveals) sign-in
+  $('#signup-modal').addClass('hidden') // hides Sign Up
+  $('#signin-modal').removeClass('hidden') // reveals Sign In
 }
 
 const onSignUpFailure = response => {
@@ -21,14 +21,14 @@ const onSignUpFailure = response => {
 }
 
 const onSignInSuccess = response => {
-  // stores the response data in 'store.js' to access authentication token later
+  // stores the response data in 'store.js' (for auth token)
   store.user = response.user
 
   $('#sign-in').trigger('reset') // clears the form
 
-  $('#signin-modal').addClass('hidden') // ensures signIn modal is left hidden
-  $('#title-page').addClass('hidden') // hides ("navigates" from) title page
-  $('#main').removeClass('hidden') // "navigates" to (reveals) main page
+  $('#signin-modal').addClass('hidden') // hides sign-in
+  $('#title-page').addClass('hidden') // hides title page
+  $('#main').removeClass('hidden') // reveals main page
 }
 
 const onSignInFailure = response => {
@@ -48,9 +48,9 @@ const onChangePasswordSuccess = response => {
   // Navigates back to the main page upon successful form submission
   $('#changepassword-modal').addClass('hidden')
 
-  $('#form-message').text('Password change succeeded!').css('color', 'green')
+  $('#changepassword-message').text('Password change succeeded!').css('color', 'green')
   setTimeout(() => {
-    $('#form-message').text('') // removes success message after 1 second
+    $('#changepassword-message').text('') // removes success message after 1 second
   }, 1000)
 }
 
@@ -66,18 +66,16 @@ const onChangePasswordFailure = response => {
 }
 
 const onSignOutSuccess = response => {
-  // $('#sign-out').trigger('reset') // clears the form - necessary??
   store.user = null // wipes signed-in users data clean
 
-  // Navigates back to title page upon succesful sign out
-  $('.modal').addClass('hidden')
-  $('#main').addClass('hidden')
-  $('#title-page').removeClass('hidden')
+  // Navigates back to title page upon succesful sign out...
+  $('.modal').addClass('hidden') // ensures all modals hidden
+  $('#main').addClass('hidden') // hides main page
+  $('#title-page').removeClass('hidden') // reveals title page
   ux.closeMobileNav() // collapses mobile navbar
 }
 
 const onSignOutFailure = response => {
-  // $('#sign-out').trigger('reset') // clears the form - necessary??
   // add success message in signout form
   $('#signout-message').text('Error Alert: Account still signed in.').css('color', 'red')
 

@@ -110,8 +110,8 @@ nav {
 }
 
 .datavisual-modalcontent {
-  height: 80vh;
-  width: 80vw;
+  height: 95vh;
+  width: 95vw;
 }
 
 .reveal-btn {
@@ -133,10 +133,15 @@ h1 {
 h2 {
   color: $title;
   font-family: fantasy;
+  margin-top: 3vh;
 }
 
 .emoji {
   font-size: 5em;
+}
+
+.message {
+  text-align: center;
 }
 
 .mood,

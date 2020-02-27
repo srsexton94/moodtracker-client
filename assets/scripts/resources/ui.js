@@ -3,21 +3,21 @@
 const showMoodsTemplate = require('../templates/entries.handlebars')
 
 const onPostMoodSuccess = () => {
-  $('#mood-message').text('') // empties mood-selection message (eg. 'happy?' 'sad?')
+  $('#main-message').text('') // empties mood-selection message (eg. 'happy?' 'sad?')
   // posts success message, colored green for visibility
-  $('#form-message').text('You submitted successfully!').css('color', 'green')
+  $('#main-message').text('You submitted successfully!').css('color', 'green')
 
   setTimeout(() => {
-    $('#form-message').text('') // clears the failure message after 2 seconds
-  }, 2000)
+    $('#main-message').text('') // clears the failure message after a second
+  }, 1000)
 }
 
 const onPostMoodFailure = () => {
   // alerts user to form submission failure, colored red for visibility
-  $('#form-message').text('There was an error, please try again later.').css('color', 'red')
+  $('#main-message').text('There was an error, please try again later.').css('color', 'red')
 
   setTimeout(() => {
-    $('#form-message').text('') // clears the failure message after 3 seconds
+    $('#main-message').text('') // clears the failure message after 3 seconds
   }, 3000)
 }
 

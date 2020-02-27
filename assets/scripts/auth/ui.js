@@ -48,9 +48,9 @@ const onChangePasswordSuccess = response => {
   // Navigates back to the main page upon successful form submission
   $('#changepassword-modal').addClass('hidden')
 
-  $('#changepassword-message').text('Password change succeeded!').css('color', 'green')
+  $('#main-message').text('Password change succeeded!').css('color', 'green')
   setTimeout(() => {
-    $('#changepassword-message').text('') // removes success message after 1 second
+    $('#main-message').text('') // removes success message after 1 second
   }, 1000)
 }
 

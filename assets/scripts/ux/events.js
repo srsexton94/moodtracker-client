@@ -15,7 +15,7 @@ const closeMobileNav = () => { // hides nav & 'x', reveals hamburger
 const selectRadio = event => {
   // posts clarifying/identifying message upon mood selection
   const myMood = event.target.id + '?'
-  $('#mood-message').text(myMood)
+  $('#main-message').text(myMood).css('color', 'black')
 }
 
 const addHandlers = () => {

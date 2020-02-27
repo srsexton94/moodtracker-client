@@ -49,7 +49,7 @@ They can be viewed in the [MoodTracker Wireframe PDF](https://documentcloud.adob
 
 A [Description of the wireframes](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A64fce2d6-ef36-4cde-a7d5-0c39782ef387) was also provided.  For Legibility it is transcribed below:
 
-####### Wire Frame Description
+###### Wire Frame Description
 1) *Title Page* - visible while unauthenticated
    - main header
    - sign up nav

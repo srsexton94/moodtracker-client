@@ -3,6 +3,7 @@
 const showMoodsTemplate = require('../templates/entries.handlebars')
 
 const onPostMoodSuccess = () => {
+  $('#entry-submission').trigger('reset') // clears the form
   $('#main-message').text('') // empties mood-selection message (eg. 'happy?' 'sad?')
   // posts success message, colored green for visibility
   $('#main-message').text('You submitted successfully!').css('color', 'green')

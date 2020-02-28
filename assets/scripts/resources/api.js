@@ -45,9 +45,22 @@ const updateMood = (data, id) => {
   })
 }
 
+const postNeed = data => {
+  console.log(data)
+  return $.ajax({
+    url: config.apiUrl + '/needs',
+    method: 'POST',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    },
+    data
+  })
+}
+
 module.exports = {
   postMood,
   showMoods,
   deleteMood,
-  updateMood
+  updateMood,
+  postNeed
 }

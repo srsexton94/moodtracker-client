@@ -18,10 +18,29 @@ const selectRadio = event => {
   $('#main-message').text(myMood).css('color', 'black')
 }
 
+const expandInstruct = () => {
+  $('#instruct').removeClass('hidden')
+}
+
+const collapseInstruct = () => {
+  $('#instruct').addClass('hidden')
+}
+
+const instructClick = () => {
+  // if #instruct has .hidden, expandInstruct()
+  if ($('#instruct').hasClass('hidden')) {
+    expandInstruct()
+  } else {
+    collapseInstruct()
+  }
+}
 const addHandlers = () => {
   $('.radio').on('click', selectRadio)
   $('#mobilenav-open').on('click', openMobileNav)
   $('#mobilenav-close').on('click', closeMobileNav)
+  $('#instruct-toggle').on('click', instructClick)
+  $('#instruct-toggle').on('mouseenter', expandInstruct)
+  $('#instruct-toggle').on('mouseleave', collapseInstruct)
 }
 
 module.exports = {

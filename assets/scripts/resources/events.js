@@ -3,6 +3,7 @@
 const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js') // why is this now throwing an error w/o .js end?
 const ui = require('./ui.js')
+const store = require('../store')
 
 const onShowMoods = event => {
   // if statement runs prevent default only when passed an event
@@ -13,14 +14,24 @@ const onShowMoods = event => {
     .catch(ui.onEntryLogFailure) // shares failure message w/deleteMood
 }
 
-const onPostMood = event => {
+const onPost = event => {
   event.preventDefault() // prevents page refresh
 
   const data = getFormFields(event.target) // submission formatted as usable data
-
-  api.postMood(data) // sends mood form data to API, POST request
+  // console.log('before POSTmoods:', data)
+  api.postMood(data)// sends mood form data to API, POST request
+    .then((response) => {
+      store.mood_id = response.mood.id
+      store.need_data = data.need
+      // console.log('mood id: ', moodId)
+      // console.log('needData; ', needData)
+    })
     .then(ui.onPostMoodSuccess) // empties mood message, posts success message
-    .catch(ui.onPostMoodFailure) // posts failure message
+    .catch(ui.onPostFailure) // posts failure message
+
+  // api.postNeed(data) // sends mood form data to API, POST request
+  //   .then(ui.onPostSuccess) // empties mood message, posts success message
+  //   .catch(ui.onPostFailure) // posts failure message
 }
 
 const onDeleteMood = event => {
@@ -58,7 +69,7 @@ const onUpdateMood = event => {
 
 // Event handlers for all actions to do with non-auth API resource(s)
 const addHandlers = () => {
-  $('#entry-submission').on('submit', onPostMood)
+  $('#entry-submission').on('submit', onPost)
   $('#showLog').on('click', onShowMoods)
   $('#mood-entries').on('click', '.delete', onDeleteMood)
   $('#mood-entries').on('click', '.update', openUpdateForm)

@@ -1,8 +1,21 @@
 'use strict'
 
 const showMoodsTemplate = require('../templates/entries.handlebars')
+const api = require('./api')
+const store = require('../store')
 
 const onPostMoodSuccess = () => {
+  const data = {}
+  data.need = store.need_data
+  data.need.mood_id = store.mood_id
+  // data.token = store.user.token
+  console.log('data: ', data)
+  api.postNeed(data) // sends mood form data to API, POST request
+    .then(onPostNeedSuccess)
+    .catch(onPostFailure)
+}
+
+const onPostNeedSuccess = () => {
   $('#entry-submission').trigger('reset') // clears the form
   $('#main-message').text('') // empties mood-selection message (eg. 'happy?' 'sad?')
   // posts success message, colored green for visibility
@@ -13,7 +26,7 @@ const onPostMoodSuccess = () => {
   }, 1000)
 }
 
-const onPostMoodFailure = () => {
+const onPostFailure = () => {
   // alerts user to form submission failure, colored red for visibility
   $('#main-message').text('There was an error, please try again later.').css('color', 'red')
 
@@ -46,7 +59,7 @@ const onEntryLogFailure = () => {
 
 module.exports = {
   onPostMoodSuccess,
-  onPostMoodFailure,
+  onPostFailure,
   onShowMoodsSuccess,
   onEntryLogFailure
 }

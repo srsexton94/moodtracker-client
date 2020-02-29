@@ -29,6 +29,17 @@ const onChangePassword = event => {
 
   const data = getFormFields(event.target) // formats form submission data
 
+  if (data.passwords.old === data.passwords.new) {
+    $('#changepassword-message').text('Must be a new password').css('color', 'red')
+    $('#change-password').trigger('reset') // clears form
+
+    setTimeout(() => {
+      $('#changepassword-message').text('') // clears message after 2 seconds
+    }, 2000)
+
+    return // stops function, prevents API request
+  }
+
   api.changePassword(data) // sends new data to API, PATCH request
     .then(ui.onChangePasswordSuccess) // clears form, navigates back to main page
     .catch(ui.onChangePasswordFailure) // clears form, sends failure message

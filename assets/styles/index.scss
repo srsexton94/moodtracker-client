@@ -126,10 +126,20 @@ h1 {
   font-size: 7vh;
 }
 
-h2,
+h2 {
+  color: $highlight;
+  font-family: monospace;
+}
+
 h3 {
   color: $highlight;
   font-family: monospace;
+
+  span {
+    color: $background;
+    display: inline;
+    font-size: 1.5em;
+  }
 }
 
 .emoji {
@@ -145,7 +155,7 @@ h3 {
   color: $background;
   font-size: .75em;
   margin: auto;
-  width: 60%;
+  width: 70%;
 }
 
 .message {
@@ -161,16 +171,9 @@ h3 {
 .need {
   input {
     height: 1.5em;
-    width: 2.5em;
+    width: 3.25em;
   }
 }
-
-// .needs-bar {
-//   background-color: green;
-//   display: inline-block;
-//   height: 20px;
-//   width: 50px;
-// }
 
 .submit {
   display: block;

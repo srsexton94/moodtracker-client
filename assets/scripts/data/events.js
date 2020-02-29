@@ -12,7 +12,7 @@ const onShowMoodVisual = event => {
 }
 
 const addHandlers = () => {
-  $('#showMoodVisual').on('click', onShowMoodVisual)
+  $('#showMoodVisual').on('click', onShowMoodVisual) // upon button click...
 }
 
 module.exports = {

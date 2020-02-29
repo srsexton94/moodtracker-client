@@ -1,37 +1,50 @@
 'use strict'
 
 const getFormFields = require('../../../lib/get-form-fields.js')
-const api = require('./api.js') // why is this now throwing an error w/o .js end?
+const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store')
 
 const onShowMoods = event => {
-  // if statement runs prevent default only when passed an event
   event.preventDefault() // prevents page refresh
 
-  api.showMoods() // displays API mood data, GET (index) request
+  api.showMoods() // GET (index) moods API request
     .then(ui.onShowMoodsSuccess) // formats & posts API data to entry log modal
     .catch(ui.onEntryLogFailure) // shares failure message w/deleteMood
 }
 
+// const validateForm = () => {
+//   $().value;
+//   if (x == "") {
+//     alert("Name must be filled out");
+//     return false;
+//   }
+// }
+
 const onPost = event => {
   event.preventDefault() // prevents page refresh
 
-  const data = getFormFields(event.target) // submission formatted as usable data
-  // console.log('before POSTmoods:', data)
-  api.postMood(data)// sends mood form data to API, POST request
-    .then((response) => {
-      store.mood_id = response.mood.id
-      store.need_data = data.need
-      // console.log('mood id: ', moodId)
-      // console.log('needData; ', needData)
-    })
-    .then(ui.onPostMoodSuccess) // empties mood message, posts success message
-    .catch(ui.onPostFailure) // posts failure message
+  const data = getFormFields(event.target) // formats usable data
 
-  // api.postNeed(data) // sends mood form data to API, POST request
-  //   .then(ui.onPostSuccess) // empties mood message, posts success message
-  //   .catch(ui.onPostFailure) // posts failure message
+  const values = Object.values(data.need) // makes an array of all need values
+
+  if (values.some(e => e > 10 || e <= 0)) { // if not 1-10
+    $('#validation').text('Please only enter numbers 1-10').css('color', 'red')
+
+    setTimeout(() => {
+      $('#validation').text('') // clears failure message after 2 seconds
+    }, 2000)
+
+    return // stops function here, prevents API requests
+  }
+
+  api.postMood(data)// POST moods API request
+    .then((response) => {
+      store.mood_id = response.mood.id // stores the id of mood created
+      store.need_data = data.need // store the form data for 'need'
+    })
+    .then(ui.onPostMoodSuccess) // leads t POST needs API request
+    .catch(ui.onPostFailure) // posts failure message
 }
 
 const onDeleteMood = event => {
@@ -41,9 +54,9 @@ const onDeleteMood = event => {
 
   api.deleteMood(id) // destroys mood entry in API, DELETE request
     .then(function () {
-      onShowMoods(event)
-    }) // upon success, refresh entry log
-    .catch(ui.onEntryLogFailure) // shares failure message w/showMoods
+      onShowMoods(event) // refreshes entry log
+    })
+    .catch(ui.onEntryLogFailure) // posts failure message
 }
 
 const openUpdateForm = event => {
@@ -51,7 +64,7 @@ const openUpdateForm = event => {
 
   const id = $(event.target).data('id') // finds the buttons data-id
   const formid = '#form' + id // uses buttons data-id to find form id
-  $(formid).removeClass('hidden') // reveals the form
+  $(formid).removeClass('hidden') // reveals the update form for target mood
 }
 
 const onUpdateMood = event => {
@@ -62,9 +75,9 @@ const onUpdateMood = event => {
 
   api.updateMood(data, id) // updates mood entry in API, PATCH request
     .then(function () {
-      onShowMoods(event)
-    }) // upon success, refresh entry log
-    .catch(ui.onEntryLogFailure) // shares failure message w/show & delete actions
+      onShowMoods(event) // refreshes entry log
+    })
+    .catch(ui.onEntryLogFailure) // posts failure message
 }
 
 // Event handlers for all actions to do with non-auth API resource(s)

@@ -46,7 +46,6 @@ const updateMood = (data, id) => {
 }
 
 const postNeed = data => {
-  console.log(data)
   return $.ajax({
     url: config.apiUrl + '/needs',
     method: 'POST',

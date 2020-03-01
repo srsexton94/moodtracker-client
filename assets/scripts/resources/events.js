@@ -13,14 +13,6 @@ const onShowMoods = event => {
     .catch(ui.onEntryLogFailure) // shares failure message w/deleteMood
 }
 
-// const validateForm = () => {
-//   $().value;
-//   if (x == "") {
-//     alert("Name must be filled out");
-//     return false;
-//   }
-// }
-
 const onPost = event => {
   event.preventDefault() // prevents page refresh
 

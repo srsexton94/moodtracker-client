@@ -13,9 +13,13 @@ const closeMobileNav = () => { // hides nav & 'x', reveals hamburger
 }
 
 const selectRadio = event => {
-  // posts clarifying/identifying message upon mood selection
+  // posts clarifying message w/mood selection
   const myMood = event.target.id + '?'
   $('#main-message').text(myMood).css('color', 'black')
+
+  const emoji = $(event.target).parent() // finds the selected radio's label
+  $('.emoji').removeClass('emoji-select') // removes any prior-selected highlight
+  $(emoji).addClass('emoji-select') // highlights selected emoji
 }
 
 const expandInstruct = () => {

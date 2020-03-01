@@ -19,23 +19,16 @@ const onPost = event => {
   const data = getFormFields(event.target) // formats usable data
   const needValues = Object.values(data.need) // makes an array of all need values
 
-  if (!data.mood) {
+  if (!data.mood) { // posts failure message if no mood input
     $('#main-message').text('Please select a mood.').css('color', 'red')
-
-    setTimeout(() => {
-      $('#main-message').text('') // clears failure message after 2 seconds
-    }, 2000)
-
-    return // stops function here, prevents API requests
+    setTimeout(() => { $('#main-message').text('') }, 2000) // removes message
+    return // stops function here
   }
+
   if (needValues.some(e => e > 10 || e <= 0)) { // if not 1-10
     $('#validation').text('Please only enter numbers 1-10').css('color', 'red')
-
-    setTimeout(() => {
-      $('#validation').text('') // clears failure message after 2 seconds
-    }, 2000)
-
-    return // stops function here, prevents API requests
+    setTimeout(() => { $('#validation').text('') }, 2000) // removes message
+    return // stops function here
   }
 
   api.postMood(data)// POST moods API request

@@ -33,10 +33,7 @@ const onChangePassword = event => {
     $('#changepassword-message').text('Must be a new password').css('color', 'red')
     $('#change-password').trigger('reset') // clears form
 
-    setTimeout(() => {
-      $('#changepassword-message').text('') // clears message after 2 seconds
-    }, 2000)
-
+    setTimeout(() => { $('#changepassword-message').text('') }, 2000)
     return // stops function, prevents API request
   }
 

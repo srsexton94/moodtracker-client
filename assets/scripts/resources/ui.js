@@ -17,6 +17,8 @@ const onPostMoodSuccess = () => {
 const onPostNeedSuccess = () => {
   $('#entry-submission').trigger('reset') // clears the form
   $('#main-message').text('') // empties mood-selection message (eg. 'happy?' 'sad?')
+  $('.emoji').removeClass('emoji-select') // removes selection highlight
+
   // posts success message, colored green for visibility
   $('#main-message').text('You submitted successfully!').css('color', 'green')
 

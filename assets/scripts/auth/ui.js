@@ -72,6 +72,8 @@ const onSignOutSuccess = response => {
   $('.modal').addClass('hidden') // ensures all modals hidden
   $('#main').addClass('hidden') // hides main page
   $('#title-page').removeClass('hidden') // reveals title page
+  $('.message').text('') // empties all message posts
+  $('.emoji').removeClass('emoji-select') // de-selects emojis
   ux.closeMobileNav() // collapses mobile navbar
 }
 

@@ -26,7 +26,7 @@
           <form id="sign-up" class="auth">
             <fieldset>
               <legend>Sign Up:</legend>
-              <p id="signup-message"></p>
+              <p id="signup-message" class="message"></p>
               <label>Email:
                 <input type="email" name="credentials[email]" placeholder="name@webaddress.com">
               </label>
@@ -49,7 +49,7 @@
           <form id="sign-in" class="auth">
             <fieldset>
               <legend>Sign In:</legend>
-              <p id="signin-message"></p>
+              <p id="signin-message" class="message"></p>
               <label>Email:
                 <input type="email" name="credentials[email]" placeholder="name@webaddress.com">
               </label>
@@ -122,7 +122,7 @@
           <fieldset id="needs-fieldset" class="container">
           <h3>How well are you meeting your needs? <span id="instruct-toggle">⍰</span></h3>
           <p id="instruct" class="instruct hidden">Rate how well you feel you're meeting each need with a number 1-10</p>
-          <p id="validation"></p>
+          <p id="validation" class="message"></p>
           <div class="row">
             <div class="need col-6 col-lg-3">
               <label for="hunger">hunger
@@ -199,6 +199,7 @@
           <span class="close">&times;</span>
           <p>Are you sure you want to go?</p>
           <button id="sign-out" class="btn btn-outline-danger btn-sm">Yes, Sign Out</button>
+          <p id="signout-message" class="message"></p>
         </div>
       </div>
 

@@ -25,10 +25,18 @@ const onPost = event => {
   event.preventDefault() // prevents page refresh
 
   const data = getFormFields(event.target) // formats usable data
+  const needValues = Object.values(data.need) // makes an array of all need values
 
-  const values = Object.values(data.need) // makes an array of all need values
+  if (!data.mood) {
+    $('#main-message').text('Please select a mood.').css('color', 'red')
 
-  if (values.some(e => e > 10 || e <= 0)) { // if not 1-10
+    setTimeout(() => {
+      $('#main-message').text('') // clears failure message after 2 seconds
+    }, 2000)
+
+    return // stops function here, prevents API requests
+  }
+  if (needValues.some(e => e > 10 || e <= 0)) { // if not 1-10
     $('#validation').text('Please only enter numbers 1-10').css('color', 'red')
 
     setTimeout(() => {

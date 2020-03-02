@@ -6,7 +6,7 @@ const ui = require('./ui.js')
 const store = require('../store')
 
 const onShowMoods = event => {
-  event.preventDefault() // prevents page refresh
+  if (event) { event.preventDefault() } // prevents page refresh
 
   api.showMoods() // GET (index) moods API request
     .then(ui.onShowMoodsSuccess) // formats & posts API data to entry log modal
@@ -40,16 +40,33 @@ const onPost = event => {
     .catch(ui.onPostFailure) // posts failure message
 }
 
-const onDeleteMood = event => {
+const deleteEntry = (need, mood) => {
+  api.deleteNeed(need)
+    .then(function () {
+      api.deleteMood(mood)
+        .then(onShowMoods)
+        .catch(ui.onEntryLogFailure)
+    })
+    .then(() => {
+      console.log('need delete success')
+    })
+    .catch(ui.onEntryLogFailure)
+}
+
+const onDeleteMoodButton = event => {
   event.preventDefault() // prevents page refresh
 
-  const id = $(event.target).data('id') // finds the buttons data-id
+  const moodId = $(event.target).data('id') // finds the buttons data-id
 
-  api.deleteMood(id) // destroys mood entry in API, DELETE request
-    .then(function () {
-      onShowMoods(event) // refreshes entry log
+  api.showNeeds()
+    .then(data => {
+      data.needs.map(need => {
+        if (need.mood.id === moodId) {
+          deleteEntry(need.id, need.mood.id)
+        }
+      })
     })
-    .catch(ui.onEntryLogFailure) // posts failure message
+    .catch(ui.onEntryLogFailure)
 }
 
 const openUpdateForm = event => {
@@ -77,7 +94,7 @@ const onUpdateMood = event => {
 const addHandlers = () => {
   $('#entry-submission').on('submit', onPost)
   $('#showLog').on('click', onShowMoods)
-  $('#mood-entries').on('click', '.delete', onDeleteMood)
+  $('#mood-entries').on('click', '.delete', onDeleteMoodButton)
   $('#mood-entries').on('click', '.update', openUpdateForm)
   $('#mood-entries').on('submit', '.form', onUpdateMood)
 }

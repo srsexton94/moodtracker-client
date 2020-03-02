@@ -24,9 +24,29 @@ const showMoods = () => {
   })
 }
 
+const showNeeds = () => {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/needs',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 const deleteMood = id => {
   return $.ajax({
     url: config.apiUrl + '/moods/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
+const deleteNeed = id => {
+  return $.ajax({
+    url: config.apiUrl + '/needs/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Token token=' + store.user.token
@@ -59,7 +79,9 @@ const postNeed = data => {
 module.exports = {
   postMood,
   showMoods,
+  showNeeds,
   deleteMood,
+  deleteNeed,
   updateMood,
   postNeed
 }

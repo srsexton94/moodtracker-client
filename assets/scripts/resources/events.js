@@ -5,14 +5,6 @@ const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store')
 
-const onShowMoods = event => {
-  if (event) { event.preventDefault() } // prevents page refresh
-
-  api.showMoods() // GET (index) moods API request
-    .then(ui.onShowMoodsSuccess) // formats & posts API data to entry log modal
-    .catch(ui.onEntryLogFailure) // shares failure message w/deleteMood
-}
-
 const onPost = event => {
   event.preventDefault() // prevents page refresh
 
@@ -38,6 +30,14 @@ const onPost = event => {
     })
     .then(ui.onPostMoodSuccess) // leads t POST needs API request
     .catch(ui.onPostFailure) // posts failure message
+}
+
+const onShowMoods = event => {
+  if (event) { event.preventDefault() } // prevents page refresh
+
+  api.showMoods() // GET (index) moods API request
+    .then(ui.onShowMoodsSuccess) // formats & posts API data to entry log modal
+    .catch(ui.onEntryLogFailure) // shares failure message w/deleteMood
 }
 
 const deleteEntry = (need, mood) => {

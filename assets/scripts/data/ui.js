@@ -1,33 +1,20 @@
 'use strict'
 
 const Chart = require('chart.js')
+const helpers = require('./helpers.js')
 
-// array of mood keys in order of input
-const moodsArr = ['happy', 'calm', 'sad', 'nervous', 'motivated', 'angry']
-
-const findMoodCount = data => { // receives the API data moods array
-  const countArr = [0, 0, 0, 0, 0, 0] // initializes each mood count at 0
-  data.forEach(entry => {
-    // for every entry, find its index
-    const moodIndex = moodsArr.indexOf(entry.mood)
-    // use that index to add one to its tally
-    countArr[moodIndex] += 1
-  })
-  return countArr // returns an array of 6 tallies, indices matching moodsArr
-}
-
-const onShowMoodVisualSuccess = data => {
+const onShowMoodTallySuccess = data => {
   // returns an array of how many times each mood was selected
-  const countArr = findMoodCount(data.moods)
+  const countArr = helpers.findMoodCount(data.moods)
 
   $('#chart').show() // reveals the canvas element in case previously hidden
 
   const ctx = $('#chart') // establishes chart context (the canvas element)
 
-  const moodChart = new Chart(ctx, {
+  const moodTallyChart = new Chart(ctx, {
     type: 'bar', // sets chart type
     data: {
-      labels: moodsArr, // array of mood keys
+      labels: helpers.moodsArr, // array of mood keys
       datasets: [{
         label: 'Your Mood Meter!',
         data: countArr, // array of each mood's total count
@@ -52,8 +39,59 @@ const onShowMoodVisualSuccess = data => {
     }
   })
 
-  $('.reveal-btn').addClass('hidden') // hides the button upon chart reveal
-  return moodChart // useless return, rids linter error for unused variable
+  $('.reveal-btn').addClass('hidden') // hides the buttons upon chart reveal
+  return moodTallyChart // useless return, rids linter error for unused variable
+}
+
+const onShowMoodOverTimeSuccess = data => {
+  data = helpers.formattedData(data.moods)
+
+  $('#chart').show() // reveals the canvas element in case previously hidden
+
+  const ctx = $('#chart') // establishes chart context (the canvas element)
+
+  const moodOverTimeChart = new Chart(ctx, {
+    type: 'line', // sets chart type
+    data: {
+      labels: data.dateArr, // an ordered array of each unique date
+      datasets: [{
+        label: 'Happy',
+        data: data.counts.happy,
+        borderColor: 'yellow'
+      },
+      {
+        label: 'Calm',
+        data: data.counts.calm,
+        borderColor: 'blue'
+      },
+      {
+        label: 'Sad',
+        data: data.counts.sad,
+        borderColor: 'purple'
+      },
+      {
+        label: 'Nervous',
+        data: data.counts.nervous,
+        borderColor: 'orange'
+      },
+      {
+        label: 'Motivated',
+        data: data.counts.motivated,
+        borderColor: 'green'
+      },
+      {
+        label: 'Angry',
+        data: data.counts.angry,
+        borderColor: 'red'
+      }]
+    },
+    options: {
+      //
+    }
+  })
+
+  $('.reveal-btn').addClass('hidden') // hides the buttons upon chart reveal
+  return moodOverTimeChart // useless return, rids linter error
 }
 
 const onDataVisualFailure = () => {
@@ -66,6 +104,7 @@ const onDataVisualFailure = () => {
 }
 
 module.exports = {
-  onShowMoodVisualSuccess,
+  onShowMoodTallySuccess,
+  onShowMoodOverTimeSuccess,
   onDataVisualFailure
 }

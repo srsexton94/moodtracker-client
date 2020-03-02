@@ -11,6 +11,7 @@
     "bootstrap": "^4.1.2",
     "chart.js": "^2.9.3",
     "jquery": "^3.3.1",
+    "knuth-shuffle": "^1.0.8",
     "popper.js": "^1.14.3"
   },
   "devDependencies": {

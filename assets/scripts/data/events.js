@@ -3,16 +3,25 @@
 const api = require('./api')
 const ui = require('./ui')
 
-const onShowMoodVisual = event => {
+const onShowMoodTally = event => {
   event.preventDefault() // prevents page refresh
 
   api.indexMoods() // displays API mood data, GET (index) request
-    .then(ui.onShowMoodVisualSuccess) // displays bar chart of all selections
+    .then(ui.onShowMoodTallySuccess) // displays bar chart of all selections
     .catch(ui.onDataVisualFailure) // posts failure message
 }
 
+const onShowMoodOverTime = event => {
+  event.preventDefault() // prevents page refresh
+
+  api.indexMoods()
+    .then(ui.onShowMoodOverTimeSuccess)
+    .catch(ui.onDataVisualFailure)
+}
+
 const addHandlers = () => {
-  $('#showMoodVisual').on('click', onShowMoodVisual) // upon button click...
+  $('#moodTally').on('click', onShowMoodTally) // upon button click...
+  $('#moodOverTime').on('click', onShowMoodOverTime)
 }
 
 module.exports = {

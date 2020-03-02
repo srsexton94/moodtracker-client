@@ -4,8 +4,8 @@
 const dateTime = str => {
   // this block extracts each component part of the date & time
   const year = str.substring(0, 4)
-  const day = str.substring(5, 7)
-  const month = str.substring(8, 10)
+  const month = str.substring(5, 7)
+  const day = str.substring(8, 10)
   let hour = parseInt(str.substring(11, 13)) + 7 // add 7 to set to our time zone (EST)
   let min = str.substring(14, 16)
 

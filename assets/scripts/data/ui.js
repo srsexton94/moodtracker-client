@@ -38,8 +38,8 @@ const onShowMoodTallySuccess = data => {
       }
     }
   })
-
-  $('.reveal-btn').addClass('hidden') // hides the buttons upon chart reveal
+  $('.reveal-btn').removeClass('hidden') // sets all reveal-btns to default display
+  $('#moodTally').addClass('hidden') // hides the buttons upon chart reveal
   return moodTallyChart // useless return, rids linter error for unused variable
 }
 
@@ -89,8 +89,8 @@ const onShowMoodOverTimeSuccess = data => {
       //
     }
   })
-
-  $('.reveal-btn').addClass('hidden') // hides the buttons upon chart reveal
+  $('.reveal-btn').removeClass('hidden') // sets all reveal-btns to default display
+  $('#moodOverTime').addClass('hidden') // hides the buttons upon chart reveal
   return moodOverTimeChart // useless return, rids linter error
 }
 

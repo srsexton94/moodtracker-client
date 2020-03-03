@@ -1,5 +1,7 @@
 'use strict'
 
+const resourceEvents = require('../resources/events')
+
 // each "Open" event removes the "hidden" (display: none) class from its modal
 // each modal has z-index 1, places it above all other content (ie disables it)
 const onOpenSignUp = event => {
@@ -16,6 +18,7 @@ const onOpenDataVisual = event => {
 
 const onOpenEntryLog = event => {
   $('#entrylog-modal').removeClass('hidden')
+  resourceEvents.onShowMoods(event)
 }
 
 const onOpenChangePassword = event => {

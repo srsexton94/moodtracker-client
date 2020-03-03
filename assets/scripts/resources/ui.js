@@ -47,7 +47,7 @@ const onShowMoodsSuccess = data => {
   const showMoodsHtml = showMoodsTemplate({ moods: data.moods })
 
   // Uses the compiled HTML and adds it to the page
-  $('#mood-entries').html(showMoodsHtml)
+  $('#entries').html(showMoodsHtml)
   $('#showLog').addClass('hidden') // hides the button
 }
 

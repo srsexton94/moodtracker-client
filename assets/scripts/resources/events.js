@@ -47,9 +47,6 @@ const deleteEntry = (need, mood) => {
         .then(onShowMoods)
         .catch(ui.onEntryLogFailure)
     })
-    .then(() => {
-      console.log('need delete success')
-    })
     .catch(ui.onEntryLogFailure)
 }
 
@@ -93,12 +90,12 @@ const onUpdateMood = event => {
 // Event handlers for all actions to do with non-auth API resource(s)
 const addHandlers = () => {
   $('#entry-submission').on('submit', onPost)
-  $('#showLog').on('click', onShowMoods)
-  $('#mood-entries').on('click', '.delete', onDeleteButton)
-  $('#mood-entries').on('click', '.update', openMoodUpdateForm)
-  $('#mood-entries').on('submit', '.form', onUpdateMood)
+  $('#entries').on('click', '.delete', onDeleteButton)
+  $('#entries').on('click', '.update', openMoodUpdateForm)
+  $('#entries').on('submit', '.form', onUpdateMood)
 }
 
 module.exports = {
-  addHandlers
+  addHandlers,
+  onShowMoods
 }

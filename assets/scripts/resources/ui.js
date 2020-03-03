@@ -40,6 +40,8 @@ const onShowMoodsSuccess = data => {
   if (data.moods.length === 0) { // if there are no entries post message
     $('#entrylog-message').text('No Available Entries.')
   }
+  // sort the entries so updates do not disorder log
+  data.moods = data.moods.sort((a, b) => a.id - b.id)
 
   // Sends API data to template, returns HTML code
   const showMoodsHtml = showMoodsTemplate({ moods: data.moods })

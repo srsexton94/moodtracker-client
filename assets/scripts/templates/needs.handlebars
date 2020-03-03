@@ -1,0 +1,48 @@
+<form id="need-form{{need.id}}" data-id="{{need.id}}" class="need-form border">
+  <fieldset data-id="{{need.id}}" class="container">
+    <label for="update{{need.id}}">My Needs:</label>
+    <div class="row">
+      <div class="need-div col-6 col-lg-3">
+        <label for="hunger{{need.id}}">hunger<br>
+          <input id="hunger{{need.id}}" type="number" class="need-update" name="need[hunger]" value="{{need.hunger}}" placeholder="{{need.hunger}}">
+        </label>
+      </div>
+      <div class="need-div col-6 col-lg-3">
+        <label for="comfort{{need.id}}">comfort<br>
+          <input id="comfort{{need.id}}" type="number" class="need-update" name="need[comfort]" value="{{need.comfort}}" placeholder="{{need.comfort}}">
+        </label>
+      </div>
+      <div class="need-div col-6 col-lg-3">
+        <label for="bladder{{need.id}}">bladder<br>
+          <input id="bladder{{need.id}}" type="number" class="need-update" name="need[bladder]" value="{{need.bladder}}" placeholder="{{need.bladder}}">
+        </label>
+      </div>
+      <div class="need-div col-6 col-lg-3">
+        <label for="energy{{need.id}}">energy<br>
+          <input id="energy{{need.id}}" type="number" class="need-update" name="need[energy]" value="{{need.energy}}" placeholder="{{need.energy}}">
+        </label>
+      </div>
+      <div class="need-div col-6 col-lg-3">
+        <label for="fun{{need.id}}">fun<br>
+          <input id="fun{{need.id}}" type="number" class="need-update" name="need[fun]" value="{{need.fun}}" placeholder="{{need.fun}}">
+        </label>
+      </div>
+      <div class="need-div col-6 col-lg-3">
+        <label for="social{{need.id}}">social<br>
+          <input id="social{{need.id}}" type="number" class="need-update" name="need[social]" value="{{need.social}}" placeholder="{{need.social}}">
+        </label>
+      </div>
+      <div class="need-div col-6 col-lg-3">
+        <label for="hygiene{{need.id}}">hygiene<br>
+          <input id="hygiene{{need.id}}" type="number" class="need-update" name="need[hygiene]" value="{{need.hygiene}}" placeholder="{{need.hygiene}}">
+        </label>
+      </div>
+      <div class="need-div col-6 col-lg-3">
+        <label for="environment{{need.id}}">environment<br>
+          <input id="environment{{need.id}}" type="number" class="need-update" name="need[environment]" value="{{need.environment}}" placeholder="{{need.environment}}">
+        </label>
+      </div>
+    </div>
+  </fieldset>
+  <input class="submit btn-outline-primary" type="submit">
+</form>

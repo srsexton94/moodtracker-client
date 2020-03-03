@@ -1,5 +1,5 @@
 {{#each moods as |mood|}}
-  <section data-id={{mood.id}}>
+  <section data-id={{mood.id}} class="border">
     <h3>{{mood.mood}}</h3>
     <p>Posted on: {{date-time mood.created_at}}</p>
     <button class="update btn btn-outline-secondary" data-id="{{mood.id}}">update</button>

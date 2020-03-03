@@ -53,7 +53,7 @@ const deleteEntry = (need, mood) => {
     .catch(ui.onEntryLogFailure)
 }
 
-const onDeleteMoodButton = event => {
+const onDeleteButton = event => {
   event.preventDefault() // prevents page refresh
 
   const moodId = $(event.target).data('id') // finds the buttons data-id
@@ -69,7 +69,7 @@ const onDeleteMoodButton = event => {
     .catch(ui.onEntryLogFailure)
 }
 
-const openUpdateForm = event => {
+const openMoodUpdateForm = event => {
   event.preventDefault() // prevents page refresh
 
   const id = $(event.target).data('id') // finds the buttons data-id
@@ -94,8 +94,8 @@ const onUpdateMood = event => {
 const addHandlers = () => {
   $('#entry-submission').on('submit', onPost)
   $('#showLog').on('click', onShowMoods)
-  $('#mood-entries').on('click', '.delete', onDeleteMoodButton)
-  $('#mood-entries').on('click', '.update', openUpdateForm)
+  $('#mood-entries').on('click', '.delete', onDeleteButton)
+  $('#mood-entries').on('click', '.update', openMoodUpdateForm)
   $('#mood-entries').on('submit', '.form', onUpdateMood)
 }
 

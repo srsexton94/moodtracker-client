@@ -19,9 +19,21 @@ const onShowMoodOverTime = event => {
     .catch(ui.onDataVisualFailure)
 }
 
+const onShowNeedAvgs = event => {
+  event.preventDefault() // prevents page refresh
+  const mood = $(event.target).data('mood')
+
+  api.indexNeeds()
+    .then(data => {
+      ui.onShowNeedAvgsSuccess(data, mood)
+    })
+    .catch(ui.onDataVisualFailure)
+}
+
 const addHandlers = () => {
   $('#moodTally').on('click', onShowMoodTally) // upon button click...
   $('#moodOverTime').on('click', onShowMoodOverTime)
+  $('#needAvgs button').on('click', onShowNeedAvgs)
 }
 
 module.exports = {

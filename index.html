@@ -173,11 +173,23 @@
       <div id="datavisual-modal" class="modal hidden">
         <div class="datavisual-modalcontent modal-content">
           <span id="datavisual-close" class="close">&times;</span>
-          <article id="data-visual">
-            <p id="datavisual-message" class="message"></p>
-            <canvas id="chart" class="chart hidden"></canvas>
-            <button id="moodTally" class="reveal-btn btn btn-outline-primary">Mood Totals</button>
-            <button id="moodOverTime" class="reveal-btn btn btn-outline-primary">Mood over Time</button>
+          <p id="datavisual-message" class="message"></p>
+          <canvas id="chart" class="chart hidden"></canvas>
+          <article id="data-visual" class="containter">
+            <h5 class="datavis-title col-12">Mood Charts</h5>
+            <div id="moodcharts" class="row">
+              <button id="moodTally" class="col-6 reveal-btn btn btn-outline-primary">Mood Totals</button>
+              <button id="moodOverTime" class="col-6 reveal-btn btn btn-outline-primary">Mood over Time</button>
+            </div>
+            <div id="needAvgs" class="row">
+              <h5 class="datavis-title col-12">Needs Averages per Mood</h5>
+              <button id="happy-chart" data-mood="happy" class="col-2 reveal-btn btn btn-outline-primary">Happy</button>
+              <button id="calm-chart" data-mood="calm" class="col-2 reveal-btn btn btn-outline-primary">Calm</button>
+              <button id="sad-chart" data-mood="sad" class="col-2 reveal-btn btn btn-outline-primary">Sad</button>
+              <button id="nervous-chart" data-mood="nervous" class="col-2 reveal-btn btn btn-outline-primary">Nerv.</button>
+              <button id="motivated-chart" data-mood="motivated" class="col-2 reveal-btn btn btn-outline-primary">Motiv.</button>
+              <button id="angry-chart" data-mood="angry" class="col-2 reveal-btn btn btn-outline-primary">Angry</button>
+            </div>
           </article>
         </div>
       </div>

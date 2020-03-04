@@ -13,6 +13,17 @@ const indexMoods = () => {
   })
 }
 
+const indexNeeds = () => {
+  return $.ajax({
+    method: 'GET',
+    url: config.apiUrl + '/needs',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
+
 module.exports = {
-  indexMoods
+  indexMoods,
+  indexNeeds
 }

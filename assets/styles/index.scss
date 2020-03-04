@@ -6,6 +6,7 @@ $focus: #000;
 $accent: #fefefe;
 $shade: rgba(0, 0, 0, .1);
 $highlight: #21337a;
+$main-font: monospace;
 
 // Mobile Nav Bar Styling...
 a {
@@ -82,6 +83,15 @@ nav {
   }
 }
 
+.datavis-title {
+  color: $highlight;
+  font-family: $main-font;
+  font-size: 1.25em;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
 .entry-log {
   text-align: center;
 }
@@ -111,6 +121,10 @@ nav {
   color: $lowlight;
 }
 
+.needbtns-title {
+  text-align: center;
+}
+
 .datavisual-modalcontent {
   height: 95vh;
   width: 95vw;
@@ -128,18 +142,18 @@ body {
 
 h1 {
   color: $accent;
-  font-family: monospace;
+  font-family: $main-font;
   font-size: 7vh;
 }
 
 h2 {
   color: $highlight;
-  font-family: monospace;
+  font-family: $main-font;
 }
 
 h3 {
   color: $highlight;
-  font-family: monospace;
+  font-family: $main-font;
 
   span {
     color: $background;

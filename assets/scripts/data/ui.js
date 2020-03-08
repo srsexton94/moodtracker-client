@@ -5,9 +5,10 @@ const helpers = require('./helpers.js')
 
 // Creates bar chart of total mood tallies
 const onShowMoodTallySuccess = data => {
+  $('.chart').hide() // ensure trends charts are emptied
   const countArr = helpers.findMoodCount(data.moods) // returns an array of how many times each mood was selected
-  $('#chart').show() // reveals the canvas element in case previously hidden
-  const ctx = $('#chart') // establishes chart context (the canvas element)
+  $('#tally-chart').show() // reveals the canvas element in case previously hidden
+  const ctx = $('#tally-chart') // establishes chart context (the canvas element)
 
   const moodTallyChart = new Chart(ctx, {
     type: 'bar', // sets chart type
@@ -28,9 +29,10 @@ const onShowMoodTallySuccess = data => {
 
 // Creates line chart maping each mood over time (by date)
 const onShowMoodOverTimeSuccess = data => {
+  $('.chart').hide() // ensure trends charts are emptied
   data = helpers.formattedData(data.moods)
-  $('#chart').show() // reveals the canvas element in case previously hidden
-  const ctx = $('#chart') // establishes chart context (the canvas element)
+  $('#time-chart').show() // reveals the canvas element in case previously hidden
+  const ctx = $('#time-chart') // establishes chart context (the canvas element)
 
   const moodOverTimeChart = new Chart(ctx, {
     type: 'line', // sets chart type
@@ -75,8 +77,10 @@ const onShowMoodOverTimeSuccess = data => {
 }
 
 const onShowNeedAvgsSuccess = (data, mood) => {
+  $('.chart').hide() // ensure trends charts are emptied
+  const chartId = `#${mood}-chart`
   $('#chart').show() // reveals the canvas element in case previously hidden
-  const ctx = $('#chart') // establishes chart context (the canvas element)
+  const ctx = $(chartId) // establishes chart context (the canvas element)
 
   const moodTallyChart = new Chart(ctx, {
     type: 'horizontalBar', // sets chart type

@@ -174,7 +174,14 @@
         <div class="datavisual-modalcontent modal-content">
           <span id="datavisual-close" class="close">&times;</span>
           <p id="datavisual-message" class="message"></p>
-          <canvas id="chart" class="chart hidden"></canvas>
+          <canvas id="tally-chart" class="chart hidden"></canvas>
+          <canvas id="time-chart" class="chart hidden"></canvas>
+          <canvas id="happy-chart" class="chart hidden"></canvas>
+          <canvas id="calm-chart" class="chart hidden"></canvas>
+          <canvas id="sad-chart" class="chart hidden"></canvas>
+          <canvas id="nervous-chart" class="chart hidden"></canvas>
+          <canvas id="motivated-chart" class="chart hidden"></canvas>
+          <canvas id="angrychart" class="chart hidden"></canvas>
           <article id="data-visual" class="containter">
             <h5 class="datavis-title col-12">Mood Charts</h5>
             <div id="moodcharts" class="row">
@@ -183,12 +190,12 @@
             </div>
             <div id="needAvgs" class="row">
               <h5 class="datavis-title col-12">Needs Averages per Mood</h5>
-              <button id="happy-chart" data-mood="happy" class="col-2 reveal-btn btn btn-outline-primary">Happy</button>
-              <button id="calm-chart" data-mood="calm" class="col-2 reveal-btn btn btn-outline-primary">Calm</button>
-              <button id="sad-chart" data-mood="sad" class="col-2 reveal-btn btn btn-outline-primary">Sad</button>
-              <button id="nervous-chart" data-mood="nervous" class="col-2 reveal-btn btn btn-outline-primary">Nerv.</button>
-              <button id="motivated-chart" data-mood="motivated" class="col-2 reveal-btn btn btn-outline-primary">Motiv.</button>
-              <button id="angry-chart" data-mood="angry" class="col-2 reveal-btn btn btn-outline-primary">Angry</button>
+              <button id="happy-chart-btn" data-mood="happy" class="col-2 reveal-btn btn btn-outline-primary">Happy</button>
+              <button id="calm-chart-btn" data-mood="calm" class="col-2 reveal-btn btn btn-outline-primary">Calm</button>
+              <button id="sad-chart-btn" data-mood="sad" class="col-2 reveal-btn btn btn-outline-primary">Sad</button>
+              <button id="nervous-chart-btn" data-mood="nervous" class="col-2 reveal-btn btn btn-outline-primary">Nerv.</button>
+              <button id="motivated-chart-btn" data-mood="motivated" class="col-2 reveal-btn btn btn-outline-primary">Motiv.</button>
+              <button id="angry-chart-btn" data-mood="angry" class="col-2 reveal-btn btn btn-outline-primary">Angry</button>
             </div>
           </article>
         </div>

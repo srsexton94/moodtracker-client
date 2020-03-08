@@ -19,7 +19,7 @@ const onShowMoodTallySuccess = data => {
         data: countArr, // array of each mood's total count
         backgroundColor: helpers.moodColors
       }],
-      options: {}
+      options: {} // need to add options for styling...
     }
   })
   $('.reveal-btn').removeClass('hidden') // sets all reveal-btns to default display
@@ -30,6 +30,7 @@ const onShowMoodTallySuccess = data => {
 // Creates line chart maping each mood over time (by date)
 const onShowMoodOverTimeSuccess = data => {
   $('.chart').hide() // ensure trends charts are emptied
+  // returns an object with a dateArr attribute & a counts object (array for each mood)
   data = helpers.formattedData(data.moods)
   $('#time-chart').show() // reveals the canvas element in case previously hidden
   const ctx = $('#time-chart') // establishes chart context (the canvas element)
@@ -38,7 +39,9 @@ const onShowMoodOverTimeSuccess = data => {
     type: 'line', // sets chart type
     data: {
       labels: data.dateArr, // an ordered array of each unique date
-      datasets: [{
+      datasets: // each dataset has mood label, array of mood's count per date
+      // included in the entry data, and the correlated color in the moods array
+      [{
         label: 'Happy',
         data: data.counts.happy,
         borderColor: helpers.moodColors[0]
@@ -86,11 +89,12 @@ const onShowNeedAvgsSuccess = (data, mood) => {
   const moodTallyChart = new Chart(ctx, {
     type: 'horizontalBar', // sets chart type
     data: {
-      labels: helpers.needsArr,
+      labels: helpers.needsArr, // array of the needs in order
       datasets: [{
         label: 'averages',
+        // data returns array of each need's average in all entries w/the selected mood
         data: helpers.findAvgsFor(data.needs, mood),
-        backgroundColor: helpers.needColors
+        backgroundColor: helpers.needColors // ordered array of colors for each need
       }]
     },
     options: {}

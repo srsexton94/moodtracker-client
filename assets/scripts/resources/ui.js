@@ -5,13 +5,13 @@ const api = require('./api')
 const store = require('../store')
 
 const onPostMoodSuccess = () => {
-  const data = {} // initializes empty array
-  data.need = store.need_data // makes
-  data.need.mood_id = store.mood_id
+  const data = {} // initializes empty object
+  data.need = store.need_data // adds need attribute with stored data
+  data.need.mood_id = store.mood_id // adds mood attribute with stored data
 
-  api.postNeed(data) // sends mood form data to API, POST request
-    .then(onPostNeedSuccess)
-    .catch(onPostFailure)
+  api.postNeed(data) // sends need form data to API, POST request
+    .then(onPostNeedSuccess) // clears form & shows success message
+    .catch(onPostFailure) // posts failure message
 }
 
 const onPostNeedSuccess = () => {

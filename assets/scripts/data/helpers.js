@@ -1,7 +1,9 @@
 'use strict'
 
+// each named array offers each resource in their standard order for iteration
 const moodsArr = ['happy', 'calm', 'sad', 'nervous', 'motivated', 'angry']
 const needsArr = ['hunger', 'comfort', 'bladder', 'energy', 'fun', 'social', 'hygiene', 'environment']
+// each colors array offers a color choice in the standard orders provided above
 const moodColors = ['yellow', 'blue', 'purple', 'orange', 'green', 'red']
 const needColors = ['#8B0000', '#ff8c00', '#D4AF37', '#006400', '#00ced1', '#000080', '#800080', '#301934']
 
@@ -23,9 +25,13 @@ const formatDate = datetime => { // extracts & combines each component part of t
   return month + '/' + day + '/' + year
 }
 
+// return an ordered array of each unique date in dataset
 const formatDateArr = arr => {
-  const dateArr = arr.map(str => str.created_at)
+  // for each entry extract the created_at datetime string
+  const dateArr = arr.map(entry => entry.created_at)
+    // then sort that returned array
     .sort()
+    // then use custom function to format the datetimes as MM/DD/YYYY
     .map(formatDate)
 
   return [...new Set(dateArr)] // deletes duplicates and returns array
@@ -74,18 +80,22 @@ const formattedData = data => {
 const findAvgsFor = (entriesArr, moodName) => {
   // given the entries array and a mood, find the average of each need in every
   // entry that has that mood
+  // initializes array to hold the total sums of each need, in standard order
   const needSums = [0, 0, 0, 0, 0, 0, 0, 0]
-  let divisor = 0
+  let divisor = 0 // incremnetor counting how many entries makes up the sums
   entriesArr.forEach(entry => {
+    // for each entry, if it's mood is the selected mood...
     if (entry.mood.mood === moodName) {
-      needsArr.forEach(need => {
+      needsArr.forEach(need => { // ...then add each of the entry's needs value
+        // to the appropriate index of needSums
         const val = entry[need]
         const i = needsArr.indexOf(need)
         needSums[i] += val
       })
-      divisor += 1
+      divisor += 1 // raise the incrementor for each entry added
     }
   })
+  // returns an array of the averages (each sum divided by the divisor & rounded)
   return needSums.map(tally => Math.round(tally / divisor))
 }
 

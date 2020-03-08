@@ -28,7 +28,7 @@ const onPost = event => {
       store.mood_id = response.mood.id // stores the id of mood created
       store.need_data = data.need // store the form data for 'need'
     })
-    .then(ui.onPostMoodSuccess) // leads t POST needs API request
+    .then(ui.onPostMoodSuccess) // leads to POST needs API request
     .catch(ui.onPostFailure) // posts failure message
 }
 
@@ -41,13 +41,13 @@ const onShowMoods = event => {
 }
 
 const deleteEntry = (need, mood) => {
-  api.deleteNeed(need)
+  api.deleteNeed(need) // DELETE need API request
     .then(function () {
-      api.deleteMood(mood)
-        .then(onShowMoods)
+      api.deleteMood(mood) // if need deletion is successful, DELETE mood API request
+        .then(onShowMoods) // if mood deletion is successful, refresh the log
         .catch(ui.onEntryLogFailure)
     })
-    .catch(ui.onEntryLogFailure)
+    .catch(ui.onEntryLogFailure) // ^^if either is unsuccessful, post error message
 }
 
 const onDeleteButton = event => {
@@ -55,15 +55,15 @@ const onDeleteButton = event => {
 
   const moodId = $(event.target).data('id') // finds the buttons data-id
 
-  api.showNeeds()
+  api.showNeeds() // GET (index) needs API request
     .then(data => {
-      data.needs.map(need => {
-        if (need.mood.id === moodId) {
-          deleteEntry(need.id, need.mood.id)
+      data.needs.map(need => { // for each need in the index response...
+        if (need.mood.id === moodId) { // if it's mood matches the selected moodID...
+          deleteEntry(need.id, need.mood.id) // delete both the need & mood entries
         }
       })
     })
-    .catch(ui.onEntryLogFailure)
+    .catch(ui.onEntryLogFailure) // if unsuccessful post error message
 }
 
 const openMoodUpdateForm = event => {

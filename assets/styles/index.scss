@@ -83,6 +83,10 @@ nav {
   }
 }
 
+// .datavis-content {
+//   height: inherit;
+// }
+
 .datavis-title {
   color: $highlight;
   font-family: $main-font;
@@ -112,6 +116,7 @@ nav {
   background-color: $accent;
   border: 1px solid $lowlight;
   box-shadow: 0 4px 8px 0 $shade;
+  height: auto;
   margin: 15% auto;
   padding: 20px;
   width: 20em;

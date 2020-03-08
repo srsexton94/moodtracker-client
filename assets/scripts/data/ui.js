@@ -79,7 +79,8 @@ const onShowMoodOverTimeSuccess = data => {
 const onShowNeedAvgsSuccess = (data, mood) => {
   $('.chart').hide() // ensure trends charts are emptied
   const chartId = `#${mood}-chart`
-  $('#chart').show() // reveals the canvas element in case previously hidden
+  console.log(chartId)
+  $(chartId).show() // reveals the canvas element in case previously hidden
   const ctx = $(chartId) // establishes chart context (the canvas element)
 
   const moodTallyChart = new Chart(ctx, {

@@ -1,16 +1,17 @@
 
 # MoodTracker
 
-##### Front End:
-- [Client URL](https://srsexton94.github.io/moodtracker-client/)
+![](./public/screenshot.png)
 
-##### Back End:
-- [GitHub](https://github.com/srsexton94/moodtracker-api)
-- [Server URL](https://moodtracker-api.herokuapp.com/)
+## Project Description
+A full-stack application (SPA) with a custom, RESTful API.  A tracker application that allows users to sign up for an account and then record how they are feeling alongside a self-rating on how well they are meeting their basic needs.  This information is then used in a number of data visualizations to help theuser notice patterns and trends in their mental ehalth and general well-being.  This is done in aim of aiding users' agency in facilitating their own self care and other mental health considerations as well.
 
-## Objective
-Independently create a full-stack application (SPA) with a custom, RESTful API.
-The application must meet certain specifications..
+### Project Links
+- [Deployed Client URL](https://srsexton94.github.io/moodtracker-client/)
+- [Back End Repo](https://github.com/srsexton94/moodtracker-api)
+- [Deployed Server URL](https://moodtracker-api.herokuapp.com/)
+- [Browser Template](https://git.generalassemb.ly/ga-wdi-boston/browser-template)
+
 
 ## Specifications
 * Be a SPA with User Authentication that interacts with a custom API
@@ -35,7 +36,7 @@ The application must meet certain specifications..
 * Chart.js
 
 ## Planning and Development
-This project was conceived with the idea to produce a mood tracker where users can record how they are feeling and use that information to notice patterns and trends in their mental health and general well-being. This would be in aim of aiding users' agency in facilitating their own self care and possibly other mental health considerations as well.
+This project, conceived as a game-ified mood tracker, began its planning process with wireframes for the front end design and user stories to guide its development overall.
 
 #### Wireframes
 The wireframes for this project proved to be an incredibly useful planning tool, especially in visualizing a clear and logical progression of events as well as general user interface considerations

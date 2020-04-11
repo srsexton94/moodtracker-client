@@ -38,6 +38,11 @@ const instructClick = () => {
     collapseInstruct()
   }
 }
+
+const onValueChange = event => {
+  console.log(event.target.value)
+}
+
 const addHandlers = () => {
   $('.radio').on('click', selectRadio)
   $('#mobilenav-open').on('click', openMobileNav)
@@ -45,6 +50,7 @@ const addHandlers = () => {
   $('#instruct-toggle').on('click', instructClick)
   $('#instruct-toggle').on('mouseenter', expandInstruct)
   $('#instruct-toggle').on('mouseleave', collapseInstruct)
+  $('#needs-fieldset input').on('change', onValueChange)
 }
 
 module.exports = {

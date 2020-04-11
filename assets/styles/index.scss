@@ -29,6 +29,10 @@ nav {
   list-style-type: none;
 }
 
+input:out-of-range {
+  border: 2px solid red;
+}
+
 .hamburger {
   border-style: none;
   float: right;

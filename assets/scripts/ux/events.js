@@ -40,7 +40,9 @@ const instructClick = () => {
 }
 
 const onValueChange = event => {
-  console.log(event.target.value)
+  const val = event.target.value // gets the value entered by user
+  const meterId = `#${event.target.id}-meter` // finds the associated meter
+  $(meterId).val(val) // updates the meter's value
 }
 
 const addHandlers = () => {

@@ -29,8 +29,11 @@ nav {
   list-style-type: none;
 }
 
-input:out-of-range {
-  border: 2px solid red;
+input {
+  border-radius: 0.4rem;
+  :out-of-range {
+    border: 2px solid red;
+  }
 }
 
 .hamburger {
@@ -87,10 +90,6 @@ input:out-of-range {
   }
 }
 
-// .datavis-content {
-//   height: inherit;
-// }
-
 .datavis-title {
   color: $highlight;
   font-family: $main-font;
@@ -141,7 +140,9 @@ input:out-of-range {
 
 .reveal-btn {
   display: block;
+  font-size: 75%;
   margin: 1em auto;
+  text-align: center;
 }
 
 // Page Styling...
@@ -169,6 +170,12 @@ h3 {
     display: inline;
     font-size: 1.5em;
   }
+}
+
+meter::-webkit-meter-bar {
+  background: #EEE;
+  border-radius: 3px;
+  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
 }
 
 .emoji {

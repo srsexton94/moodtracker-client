@@ -27,13 +27,13 @@
             <fieldset>
               <legend>Sign Up:</legend>
               <p id="signup-message" class="message"></p>
-              <label>Email:
+              <label>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="email" name="credentials[email]" placeholder="name@webaddress.com">
               </label>
               <label>Password:
                 <input type="password" name="credentials[password]" placeholder="*****">
               </label>
-              <label>Confirm Password:
+              <label>Confirm</br> Password:
                 <input type="password" name="credentials[password_confirmation]" placeholder="*****">
               </label>
               <input class="submit btn-secondary" type="submit" name="submit" value="Submit">
@@ -50,7 +50,7 @@
             <fieldset>
               <legend>Sign In:</legend>
               <p id="signin-message" class="message"></p>
-              <label>Email:
+              <label>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <input type="email" name="credentials[email]" placeholder="name@webaddress.com">
               </label>
               <label>Password:
@@ -121,56 +121,56 @@
           </fieldset>
           <fieldset id="needs-fieldset" class="container">
           <h3>How well are you meeting your needs? <span id="instruct-toggle">⍰</span></h3>
-          <p id="instruct" class="instruct hidden">Rate how well you feel you're meeting each need with a number 1-10</p>
+          <p id="instruct" class="instruct hidden">Rate how well you're meeting each need.</br>Type in a number 1-10 to adjust the bars.</p>
           <p id="validation" class="message"></p>
           <div class="row">
             <div class="need col-6 col-lg-3">
               <label for="hunger">hunger
                 <input id="hunger" type="number" class="need-input" min="1" max="10" name="need[hunger]" placeholder="1-10" required>
               </label>
-              <meter id="hunger-meter" value="0" min="0" max="10" />
+              <meter id="hunger-meter" class="meter" value="0" min="0" low="3" max="10" />
             </div>
             <div class="need col-6 col-lg-3">
               <label for="comfort">comfort
                 <input id="comfort" type="number" class="need-input" min="1" max="10" name="need[comfort]" placeholder="1-10" required>
               </label>
-              <meter id="comfort-meter" value="0" min="0" max="10" />
+              <meter id="comfort-meter" class="meter" value="0" min="0" low="3" max="10" />
             </div>
             <div class="need col-6 col-lg-3">
               <label for="bladder">bladder
                 <input id="bladder" type="number" class="need-input" min="1" max="10" name="need[bladder]" placeholder="1-10" required>
               </label>
-              <meter id="bladder-meter" value="0" min="0" max="10" />
+              <meter id="bladder-meter" class="meter" value="0" min="0" low="3" max="10" />
             </div>
             <div class="need col-6 col-lg-3">
               <label for="energy">energy
                 <input id="energy" type="number" class="need-input" min="1" max="10" name="need[energy]" placeholder="1-10" required>
               </label>
-              <meter id="energy-meter" value="0" min="0" max="10" />
+              <meter id="energy-meter" class="meter" value="0" min="0" low="3" max="10" />
             </div>
             <div class="need col-6 col-lg-3">
               <label for="fun">fun
                 <input id="fun" type="number" class="need-input" min="1" max="10" name="need[fun]" placeholder="1-10" required>
               </label>
-              <meter id="fun-meter" value="0" min="0" max="10" />
+              <meter id="fun-meter" class="meter" value="0" min="0" low="3" max="10" />
             </div>
             <div class="need col-6 col-lg-3">
               <label for="social">social
                 <input id="social" type="number" class="need-input" min="1" max="10" name="need[social]" placeholder="1-10" required>
               </label>
-              <meter id="social-meter" value="0" min="0" max="10" />
+              <meter id="social-meter" class="meter" value="0" min="0" low="3" max="10" />
             </div>
             <div class="need col-6 col-lg-3">
               <label for="hygiene">hygiene
                 <input id="hygiene" type="number" class="need-input" min="1" max="10" name="need[hygiene]" placeholder="1-10" required>
               </label>
-              <meter id="hygiene-meter" value="0" min="0" max="10" />
+              <meter id="hygiene-meter" class="meter" value="0" min="0" low="3" max="10" />
             </div>
             <div class="need col-6 col-lg-3">
-              <label for="environment">environment
+              <label for="environment">enviro.
                 <input id="environment" type="number" class="need-input" min="1" max="10" name="need[environment]" placeholder="1-10" required>
               </label>
-              <meter id="environment-meter" value="0" min="0" max="10" />
+              <meter id="environment-meter" class="meter" value="0" min="0" low="3" max="10" />
             </div>
           </div>
           </fieldset>

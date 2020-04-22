@@ -18,6 +18,7 @@ const onPostNeedSuccess = () => {
   $('#entry-submission').trigger('reset') // clears the form
   $('#main-message').text('') // empties mood-selection message (eg. 'happy?' 'sad?')
   $('.emoji').removeClass('emoji-select') // removes selection highlight
+  $('#needs-fieldset meter').val(0) // resets the meters to 0
 
   // posts success message, colored green for visibility
   $('#main-message').text('You submitted successfully!').css('color', 'green')

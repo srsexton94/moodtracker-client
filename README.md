@@ -45,52 +45,25 @@ They can be viewed in the [MoodTracker Wireframe PDF](https://documentcloud.adob
 A [Description of the wireframes](https://documentcloud.adobe.com/link/track?uri=urn%3Aaaid%3Ascds%3AUS%3A64fce2d6-ef36-4cde-a7d5-0c39782ef387) was also provided.  For Legibility it is transcribed below:
 
 ###### Wire Frame Description
-1) *Title Page* - visible while unauthenticated
-   - main header
-   - sign up nav
-   - sign in nav
-   - about/contact nav
+1) *Title Page* - visible while unauthenticated (main header, sign up nav, sign in nav, about/contact nav)
 
-2) *Sign up* (modal) visible while unauthenticated
-   - name/username/email/password/confirmation inputs
-   - form submit
-   - 'X' out of modal (return)
+2) *Sign up* (modal) visible while unauthenticated (name/username/email/password/confirmation inputs, form submit, 'X' out of modal (return))
 
-3) *Sign in* (modal) visible while unauthenticated
-   - username/password inputs
-   - form submitted
-   - 'X' out of modal (nav -> title page)
-   - 'Don't have account?' -> sign up
+3) *Sign in* (modal) visible while unauthenticated (username/password inputs, form submitted, 'X' out of modal (nav -> title page), 'Don't have account?' -> sign up)
 
-4) *Main pg pt.1* (needs input) visible while authenticated
-   - hunger/comfort/bladder/energy/fun/social/hygiene/environment input 'bars' (range inputs?)
+4) *Main pg pt.1* (needs input) visible while authenticated (hunger/comfort/bladder/energy/fun/social/hygiene/environment input 'bars' (range inputs?))
 
-5) *Main pg pt.2* (mood input) visible while authenticated
-   - select one mood from input options list (radio buttons?)
-   - form submit (also resents Main Page)
+5) *Main pg pt.2* (mood input) visible while authenticated (select one mood from input options list (radio buttons?), form submit (also resents Main Page))
 
-6) *Calendar* - visible while authenticated
-   - month name, navigation arrows, calendar display, 'x' out (nav -> main)
-   - Each day is clickable? (nav -> '7' modals)
+6) *Calendar* - visible while authenticated (month name, navigation arrows, calendar display, 'x' out (nav -> main), Each day is clickable? (nav -> '7' modals))
 
-7) *Day Modals* - visible while authenticated
-   - display mood to user with overall need bar
-   - 'x' out (nav -> calendar)
+7) *Day Modals* - visible while authenticated (display mood to user with overall need bar, 'x' out (nav -> calendar))
 
-8) *Analysis Overview* - visible while authenticated
-   - list of each mood token w/correlated need bar (highest & lowest?)
-   - 'x' out (nav -> main page)
+8) *Analysis Overview* - visible while authenticated (list of each mood token w/correlated need bar (highest & lowest?), 'x' out (nav -> main page))
 
-9) *Profile Page* - visible while authenticated
-   - name/username/email/password display
-   - update button -> changes displays to input
-   - form submit button
-   - 'x' out (nav -> main page)
+9) *Profile Page* - visible while authenticated (name/username/email/password display, update button -> changes displays to input, form submit button, 'x' out (nav -> main page))
 
-10) *About/Contact* - any authentication status
-   - 'About Us' paragraph (on dev team)
-   - 'Contact Us' form - name/email/message input
-   - Submit form
+10) *About/Contact* - any authentication status ('About Us' paragraph (on dev team), 'Contact Us' form - name/email/message input, Submit form)
 
 #### User Stories
 As a user I want to...

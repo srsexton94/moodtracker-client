@@ -1,12 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Oswald&display=swap');
 $lowlight: #aeaeae;
 $background: rgba(0, 0, 0, .4);
-$body: #cef;
+$body: #d0f8fb;
 $focus: #000;
 $accent: #fefefe;
 $shade: rgba(0, 0, 0, .1);
 $highlight: #21337a;
-$main-font: monospace;
+$main-font: 'Oswald', sans-serif;
+$sub-font: 'Open Sans', sans-serif;
+$shadow: 0 5px 8px rgba(50, 55, 65, .95);
 
 // Mobile Nav Bar Styling...
 a {
@@ -147,6 +150,7 @@ input {
 
 // Page Styling...
 body {
+  font-family: $sub-font;
   background-color: $body;
 }
 
@@ -222,11 +226,13 @@ meter::-webkit-meter-bar {
 
 .title-section {
   background-color: $highlight;
+  box-shadow: $shadow;
   color: $accent;
   height: 40%;
   margin: 10vh auto 0;
   padding: 10%;
   text-align: center;
+  text-shadow: $shadow;
 }
 
 .hidden {

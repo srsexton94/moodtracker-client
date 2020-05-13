@@ -21,7 +21,7 @@
 
       <div id="signup-modal" class="modal hidden">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <span class="close"><i class="fas fa-times"></i></span>
           <form id="sign-up" class="auth">
             <fieldset>
               <legend>Sign Up:</legend>
@@ -44,7 +44,7 @@
 
       <div id="signin-modal" class="modal hidden">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <span class="close"><i class="fas fa-times"></i></span>
           <form id="sign-in" class="auth">
             <fieldset>
               <legend>Sign In:</legend>
@@ -76,10 +76,26 @@
 
         <nav id="mobilenav" class="mobilenav">
         	<ul>
-            <li id="datavisual-open"><a href="#">See Trends</a></li>
-        		<li id="entrylog-open"><a href="#">Entry Log</a></li>
-        		<li id="changepassword-open"><a href="#">Change Password</a></li>
-        		<li id="signout-open"><a href="#">Sign Out</a></li>
+            <li id="datavisual-open">
+              <a href="#">
+                <i class="fas fa-chart-bar"></i> See Trends
+              </a>
+            </li>
+        		<li id="entrylog-open">
+              <a href="#">
+                <i class="fas fa-archive"></i> Entry Log
+              </a>
+            </li>
+        		<li id="changepassword-open">
+              <a href="#">
+                <i class="fas fa-key"></i> Change Password
+              </a>
+            </li>
+        		<li id="signout-open">
+              <a href="#">
+                <i class="fas fa-sign-out-alt"></i> Sign Out
+              </a>
+            </li>
         	</ul>
         </nav>
 
@@ -181,7 +197,7 @@
 
       <div id="datavisual-modal" class="modal hidden">
         <div class="datavis-content modal-content">
-          <span id="datavis-close" class="close">&times;</span>
+          <span id="datavis-close" class="close"><i class="fas fa-times"></i></span>
           <p id="datavisual-message" class="message"></p>
           <canvas id="tally-chart" class="chart hidden"></canvas>
           <canvas id="time-chart" class="chart hidden"></canvas>
@@ -212,7 +228,7 @@
 
       <div id="entrylog-modal" class="modal hidden">
         <div class="modal-content">
-          <span id="entrylog-close" class="close">&times;</span>
+          <span id="entrylog-close" class="close"><i class="fas fa-times"></i></span>
           <article id="entry-log" class="entry-log">
             <p id="entrylog-message" class="message"></p>
             <div id="entries" class="mood-entries modal-display"></div>
@@ -222,7 +238,7 @@
 
       <div id="signout-modal" class="modal hidden">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <span class="close"><i class="fas fa-times"></i></span>
           <p>Are you sure you want to go?</p>
           <button id="sign-out" class="btn btn-outline-danger btn-sm">Yes, Sign Out</button>
           <p id="signout-message" class="message"></p>
@@ -231,7 +247,7 @@
 
       <div id="changepassword-modal" class="modal hidden">
         <div class="modal-content">
-          <span class="close">&times;</span>
+          <span class="close"><i class="fas fa-times"></i></span>
           <form id="change-password" class="auth">
             <fieldset>
               <legend>Change Password:</legend>

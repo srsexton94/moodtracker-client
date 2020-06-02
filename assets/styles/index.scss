@@ -202,6 +202,21 @@ meter::-webkit-meter-bar {
   width: 70%;
 }
 
+.loader {
+  animation: spin 1s linear infinite;
+  border: .5rem solid $lowlight;
+  border-radius: 50%;
+  border-top: .5rem solid $highlight;
+  height: 2rem;
+  margin: auto;
+  width: 2rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
 .message {
   text-align: center;
 }

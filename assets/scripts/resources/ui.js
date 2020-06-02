@@ -5,6 +5,8 @@ const api = require('./api')
 const store = require('../store')
 
 const onPostMoodSuccess = () => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   const data = {} // initializes empty object
   data.need = store.need_data // adds need attribute with stored data
   data.need.mood_id = store.mood_id // adds mood attribute with stored data
@@ -15,6 +17,8 @@ const onPostMoodSuccess = () => {
 }
 
 const onPostNeedSuccess = () => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   $('#entry-submission').trigger('reset') // clears the form
   $('#main-message').text('') // empties mood-selection message (eg. 'happy?' 'sad?')
   $('.emoji').removeClass('emoji-select') // removes selection highlight
@@ -29,6 +33,8 @@ const onPostNeedSuccess = () => {
 }
 
 const onPostFailure = () => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   // alerts user to form submission failure, colored red for visibility
   $('#main-message').text('There was an error, please try again later.').css('color', 'red')
 
@@ -38,6 +44,8 @@ const onPostFailure = () => {
 }
 
 const onShowMoodsSuccess = data => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   if (data.moods.length === 0) { // if there are no entries post message
     $('#entrylog-message').text('No Available Entries.')
   }
@@ -53,6 +61,8 @@ const onShowMoodsSuccess = data => {
 }
 
 const onEntryLogFailure = () => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   // sends user failure message, colored red for visibility
   $('#entrylog-message').text('Apologies, an error occurred. Please try again later.').css('color', 'red')
 

@@ -4,6 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const postMood = data => {
+  $('.resource-loader').removeClass('hidden')
   return $.ajax({
     url: config.apiUrl + '/moods',
     method: 'POST',
@@ -15,6 +16,7 @@ const postMood = data => {
 }
 
 const showMoods = () => {
+  $('.resource-loader').removeClass('hidden')
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/moods',
@@ -25,6 +27,7 @@ const showMoods = () => {
 }
 
 const showNeeds = () => {
+  $('.resource-loader').removeClass('hidden')
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/needs',
@@ -35,6 +38,7 @@ const showNeeds = () => {
 }
 
 const deleteMood = id => {
+  $('.resource-loader').removeClass('hidden')
   return $.ajax({
     url: config.apiUrl + '/moods/' + id,
     method: 'DELETE',
@@ -45,6 +49,7 @@ const deleteMood = id => {
 }
 
 const deleteNeed = id => {
+  $('.resource-loader').removeClass('hidden')
   return $.ajax({
     url: config.apiUrl + '/needs/' + id,
     method: 'DELETE',
@@ -55,6 +60,7 @@ const deleteNeed = id => {
 }
 
 const updateMood = (data, id) => {
+  $('.resource-loader').removeClass('hidden')
   return $.ajax({
     url: config.apiUrl + '/moods/' + id,
     method: 'PATCH',
@@ -66,6 +72,7 @@ const updateMood = (data, id) => {
 }
 
 const postNeed = data => {
+  $('.resource-loader').removeClass('hidden')
   return $.ajax({
     url: config.apiUrl + '/needs',
     method: 'POST',

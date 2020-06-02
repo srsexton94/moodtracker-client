@@ -24,6 +24,8 @@ const onShowMoodTallySuccess = data => {
   })
   $('.reveal-btn').removeClass('hidden') // sets all reveal-btns to default display
   $('#moodTally').addClass('hidden') // hides the buttons upon chart reveal
+  // hide loader image
+  $('.loader').addClass('hidden')
   return moodTallyChart // useless return, rids linter error for unused variable
 }
 
@@ -76,6 +78,8 @@ const onShowMoodOverTimeSuccess = data => {
   })
   $('.reveal-btn').removeClass('hidden') // sets all reveal-btns to default display
   $('#moodOverTime').addClass('hidden') // hides the buttons upon chart reveal
+  // hide loader image
+  $('.loader').addClass('hidden')
   return moodOverTimeChart // useless return, rids linter error
 }
 
@@ -102,10 +106,14 @@ const onShowNeedAvgsSuccess = (data, mood) => {
 
   $('.reveal-btn').removeClass('hidden') // sets all reveal-btns to default display
   $(`#${mood}-chart`).addClass('hidden') // hides the button upon chart reveal
+  // hide loader image
+  $('.loader').addClass('hidden')
   return moodTallyChart // useless return, rids linter error for unused variable
 }
 
 const onDataVisualFailure = () => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   // sends user failure message, colored red for visibility
   $('#datavisual-message').text('Apologies, an error occurred. Please try again later.').css('color', 'red')
 

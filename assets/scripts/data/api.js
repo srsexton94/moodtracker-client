@@ -4,6 +4,7 @@ const config = require('../config')
 const store = require('../store')
 
 const indexMoods = () => {
+  $('.data-loader').removeClass('hidden')
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/moods',
@@ -14,6 +15,7 @@ const indexMoods = () => {
 }
 
 const indexNeeds = () => {
+  $('.data-loader').removeClass('hidden')
   return $.ajax({
     method: 'GET',
     url: config.apiUrl + '/needs',

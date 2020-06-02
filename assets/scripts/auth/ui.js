@@ -4,12 +4,16 @@ const store = require('./../store.js')
 const ux = require('./../ux/events')
 
 const onSignUpSuccess = response => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   $('#sign-up').trigger('reset') // clears the form
   $('#signup-modal').addClass('hidden') // hides Sign Up
   $('#signin-modal').removeClass('hidden') // reveals Sign In
 }
 
 const onSignUpFailure = response => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   // posts failure message in signup form, colored red for visibility
   $('#signup-message').text('Sorry, Sign up unsuccessful').css('color', 'red')
 
@@ -21,6 +25,8 @@ const onSignUpFailure = response => {
 }
 
 const onSignInSuccess = response => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   // stores the response data in 'store.js' (for auth token)
   store.user = response.user
 
@@ -32,6 +38,8 @@ const onSignInSuccess = response => {
 }
 
 const onSignInFailure = response => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   // add failure message in signin form, colored red for visibility
   $('#signin-message').text('Email/Password incorrect').css('color', 'red')
 
@@ -43,6 +51,8 @@ const onSignInFailure = response => {
 }
 
 const onChangePasswordSuccess = response => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   $('#change-password').trigger('reset') // clears the form
 
   // Navigates back to the main page upon successful form submission
@@ -55,6 +65,8 @@ const onChangePasswordSuccess = response => {
 }
 
 const onChangePasswordFailure = response => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   // add failure message in change password form, colored red for visibility
   $('#changepassword-message').text('Password update failed.').css('color', 'red')
 
@@ -66,6 +78,8 @@ const onChangePasswordFailure = response => {
 }
 
 const onSignOutSuccess = response => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   store.user = null // wipes signed-in users data clean
 
   // Navigates back to title page upon succesful sign out...
@@ -78,6 +92,8 @@ const onSignOutSuccess = response => {
 }
 
 const onSignOutFailure = response => {
+  // hide loader image
+  $('.loader').addClass('hidden')
   // add success message in signout form
   $('#signout-message').text('Error Alert: Account still signed in.').css('color', 'red')
 

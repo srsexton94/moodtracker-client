@@ -18,10 +18,24 @@ const onSignIn = event => {
   event.preventDefault() // prevents page refresh
 
   const data = getFormFields(event.target) // formats form submission data
-
+  console.log('data: ', data)
   api.signIn(data) // sends user data to API, POST request
     .then(ui.onSignInSuccess) // clears form, stores user data, navigates to main page
     .catch(ui.onSignInFailure) // clears form, posts failure message
+}
+
+const onGuestSignIn = event => {
+  console.log('yep, thats guest sign in alright')
+  const data = {
+    'credentials': {
+      'email': 'guest@email.com',
+      'password': 'guest'
+    }
+  }
+
+  api.guestSignIn(data) // sends user data to API, POST request
+    .then(ui.onGuestSignInSuccess) // clears form, stores user data, navigates to main page
+    .catch(ui.onGuestSignInFailure) // clears form, posts failure message
 }
 
 const onChangePassword = event => {
@@ -54,6 +68,7 @@ const onSignOut = event => {
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
+  $('.guest-login').on('click', onGuestSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('click', onSignOut)
 }

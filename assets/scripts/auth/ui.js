@@ -50,6 +50,37 @@ const onSignInFailure = response => {
   }, 3000)
 }
 
+const onGuestSignInSuccess = response => {
+  // hide loader image & reveal guest sign in link
+  $('.loader').addClass('hidden')
+  $('.guest-login').removeClass('hidden')
+  $('#changepassword-open').addClass('hidden')
+  // stores the response data in 'store.js' (for auth token)
+  store.user = response.user
+
+  $('#sign-in').trigger('reset') // clears the form
+
+  $('#signin-modal').addClass('hidden') // hides sign-in
+  $('#title-page').addClass('hidden') // hides title page
+  $('#main').removeClass('hidden') // reveals main page
+}
+
+const onGuestSignInFailure = response => {
+  // hide loader image & reveal guest sign in link
+  $('.loader').addClass('hidden')
+  $('.guest-login').removeClass('hidden')
+
+  // add failure message in place of guest sign in link, colored red for visibility
+  $('.guest-login').text('Email/Password incorrect').css('color', 'red')
+
+  $('#sign-in').trigger('reset') // clears the form
+
+  // replaces failure message with regular text after 2 seconds
+  setTimeout(() => {
+    $('.guest-login').text('Sign in as a Guest').css('color', '#fefefe')
+  }, 2000)
+}
+
 const onChangePasswordSuccess = response => {
   // hide loader image
   $('.loader').addClass('hidden')
@@ -88,6 +119,7 @@ const onSignOutSuccess = response => {
   $('#title-page').removeClass('hidden') // reveals title page
   $('.message').text('') // empties all message posts
   $('.emoji').removeClass('emoji-select') // de-selects emojis
+  $('#changepassword-open').removeClass('hidden') // reveals change pw in case of guest
   ux.closeMobileNav() // collapses mobile navbar
 }
 
@@ -107,6 +139,8 @@ module.exports = {
   onSignUpFailure,
   onSignInSuccess,
   onSignInFailure,
+  onGuestSignInSuccess,
+  onGuestSignInFailure,
   onChangePasswordSuccess,
   onChangePasswordFailure,
   onSignOutSuccess,

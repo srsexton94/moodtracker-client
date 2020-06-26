@@ -23,6 +23,17 @@ const signIn = data => {
   })
 }
 
+// post form data to user API, retrieves authentication token
+const guestSignIn = data => {
+  $('.guest-loader').removeClass('hidden')
+  $('.guest-login').addClass('hidden')
+  return $.ajax({
+    url: config.apiUrl + '/sign-in',
+    method: 'POST',
+    data
+  })
+}
+
 // requiring authentication token, edits user API password data
 const changePassword = data => {
   $('.auth-loader').removeClass('hidden')
@@ -51,6 +62,7 @@ const signOut = () => {
 module.exports = {
   signUp,
   signIn,
+  guestSignIn,
   changePassword,
   signOut
 }

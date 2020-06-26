@@ -29,7 +29,7 @@ const onGuestSignIn = event => {
   const data = {
     'credentials': {
       'email': 'guest@email.com',
-      'password': 'guest'
+      'password': 'zowpt7rv4fj'
     }
   }
 

@@ -179,9 +179,11 @@ h3 {
 }
 
 meter::-webkit-meter-bar {
-  background: #EEE;
-  border-radius: 3px;
-  box-shadow: 0 2px 3px rgba(0,0,0,0.2) inset;
+  background: $accent;
+  border-radius: 1rem;
+  box-shadow: 1px 3px 4px $shade inset;
+  height: 1.25rem;
+  width: 125%;
 }
 
 .emoji {
@@ -240,6 +242,8 @@ meter::-webkit-meter-bar {
 
 .need {
   input {
+    border: 0;
+    box-shadow: 1px 1px 1px $shade;
     height: 1.5em;
     width: 3.25em;
   }
